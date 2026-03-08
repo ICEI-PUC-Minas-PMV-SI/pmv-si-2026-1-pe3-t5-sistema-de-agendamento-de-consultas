@@ -1,10 +1,26 @@
 # 2. ESTADO DA ARTE
-O estado da arte é um mapeamento de toda a produção acadêmica sobre um assunto específico, aqui especificamente sobre o tema escolhido para o seu trabalho. A ideia consiste em reunir as conclusões que outras pesquisas científicas chegaram sobre um determinado assunto. Neste momento você deverá buscar respostas para as seguintes perguntas:
 
-1.	Quais pesquisas estão sendo desenvolvidas sobre esse tema?
-2.	Quem está pesquisando e onde?
-3.	O que as atuais pesquisas científicas concluíram sobre o tema? 
-4.	Quais as divergências dos pesquisadores sobre o assunto? 
-5.	Quais aspectos carecem de maior abordagem?
+A informatização de processos administrativos tem sido amplamente discutida na literatura científica, especialmente no contexto de organizações que lidam com grande volume de informações e necessitam otimizar seus processos operacionais. No setor da saúde, incluindo clínicas odontológicas, o uso de sistemas de informação tem sido apontado como um fator essencial para melhorar a gestão de dados, a tomada de decisões e a eficiência no atendimento aos pacientes. 
 
-É importante referenciar estas pesquisas, fazendo as devidas citações de acordo com as normas da ABNT e colocando as referências completas ao final do trabalho.
+Nesse contexto, diversas pesquisas acadêmicas têm investigado o desenvolvimento de sistemas computacionais para gestão de clínicas odontológicas, com foco principalmente em funcionalidades como agendamento de consultas, cadastro de pacientes, controle financeiro e geração de relatórios. Essas soluções buscam substituir métodos tradicionais de gestão baseados em registros manuais, que frequentemente resultam em perda de informações, erros administrativos e dificuldades no acompanhamento do histórico de pacientes.  
+
+Entre os trabalhos relevantes encontrados na literatura está o sistema OdontoSys, desenvolvido por Zanetoni e Prete (2021). O objetivo do estudo foi criar um sistema web destinado à gestão de clínicas odontológicas, permitindo o gerenciamento de pacientes, agendamentos e atividades administrativas da clínica. O sistema foi estruturado em quatro módulos principais: dentista, funcionário, paciente e administrador, permitindo diferentes níveis de acesso e responsabilidades dentro da plataforma. O software foi desenvolvido e logo após a implementação, o sistema foi testado em uma clínica odontológica real, demonstrando que a ferramenta conseguiu atender às necessidades de gestão da clínica analisada.  
+
+Outro estudo relevante é apresentado por Carvalho, Balestreiro e Passerini (2023), que propuseram o desenvolvimento do sistema ConsulTI, uma ferramenta web voltada à gestão de processos administrativos em clínicas odontológicas. O estudo destaca que muitas clínicas ainda utilizam métodos manuais de controle, como agendas físicas e registros em papel, o que gera ineficiências operacionais e riscos relacionados à perda de dados. O sistema proposto permite o cadastro de pacientes, controle de funcionários e gerenciamento de agendamentos, sendo acessado por meio de navegadores web. A solução foi avaliada por profissionais da área odontológica e obteve boa aceitação, indicando que sistemas desse tipo podem contribuir significativamente para a melhoria da organização e eficiência das clínicas. Apesar da existência dessas soluções, a literatura aponta que ainda há desafios relacionados à informatização de clínicas odontológicas.  
+
+Estudos mostram que muitos profissionais da área ainda não utilizam sistemas digitais para gestão administrativa, seja por resistência tecnológica, custos de implantação ou falta de soluções adequadas às necessidades específicas de cada clínica. Além disso, pesquisas indicam que, funcionalidades como histórico completo de pacientes, lembretes automáticos de consultas e facilidade no agendamento online são aspectos frequentemente demandados pelos profissionais e ainda pouco explorados em alguns sistemas existentes.  
+
+Diante desse cenário, percebe-se que há espaço para o desenvolvimento de soluções que ampliem a integração entre pacientes e clínicas odontológicas, oferecendo ferramentas mais intuitivas para agendamento de consultas, visualização de horários disponíveis e organização da agenda dos profissionais. Nesse sentido, o presente projeto propõe o desenvolvimento de uma plataforma web voltada para otimizar a comunicação entre pacientes e clínicas odontológicas, permitindo o agendamento online de consultas, organização das agendas dos dentistas e manutenção de registros básicos de pacientes e atendimentos.  
+
+Assim, o sistema proposto busca contribuir para a modernização da gestão de clínicas odontológicas, reduzindo problemas comuns do agendamento tradicional — como atrasos, erros administrativos e dificuldades de comunicação — e oferecendo uma solução prática tanto para pacientes quanto para profissionais da área. 
+
+
+## Referências 
+
+PEREIRA, Wisne Raí Soares; LARANJEIRA, Dion Ribeiro. ODONTO CONCEPT: Implementação de um Aplicativo Mobile Multiplataforma para Controle de Agendamento de Consultas na Clínica Conceito Odontologia Estética no Município de Boa Vista-RR. Revista Multidisciplinar Pey Këyo Científico - ISSN 2525-8508, [S. l.], v. 7, n. 3, p. 13–18, 2022. Disponível em: https://estacio.periodicoscientificos.com.br/index.php/pkcroraima/article/view/1173. Acesso em: 7 mar. 2026. 
+
+ZANETONI, M. G.; PRETE, L. R. Sistema de gestão para clínicas odontológicas. 2021. Artigo de Graduação (Tecnologia em Sistemas para Internet) – Faculdade de Tecnologia Prof. José Camargo, Jales, 2021. Artigo apresentado no V Simpósio de Tecnologia da Fatec Jales – SITEF, 2021, Jales-SP. Disponível em: http://ric.cps.sp.gov.br/handle/123456789/7501. Acesso em: 7 mar. 2026. 
+
+ASSIS, Priscila Helena de; ALMEIDA, Kleber Rosa de; SILVA, Luciana de Almeida; NARIMATSU, Danielli Mayumi Sato; ORTOLANI, Cristina Lúcia Feijó. Estratégias de Agendamento e Gestão de Tempo em Clínicas Odontológicas: Maximizando Eficiência e Satisfação do Paciente. ID on line. Revista de psicologia, [S. l.], v. 17, n. 69, p. 395–406, 2023. DOI: 10.14295/idonline.v17i69.3925. Disponível em: https://idonline.emnuvens.com.br/id/article/view/3925. Acesso em: 7 mar. 2026. 
+
+ 
