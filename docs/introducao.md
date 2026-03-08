@@ -1,6 +1,8 @@
 # 1. INTRODUÇÃO
 
-A transformação digital tem ampliado o uso de soluções tecnológicas na área da saúde para melhorar a gestão de processos e a experiência dos pacientes. Em muitas clínicas odontológicas, o agendamento de consultas ainda é realizado de forma manual ou por telefone, o que pode gerar atrasos, falhas de comunicação e dificuldades na organização das agendas. Nesse contexto, plataformas digitais surgem como uma alternativa para automatizar o agendamento e otimizar a gestão dos atendimentos. Este trabalho propõe o desenvolvimento de uma plataforma web voltada para facilitar o agendamento de consultas e melhorar o gerenciamento das agendas em clínicas odontológicas.
+A informatização de processos tem se tornado cada vez mais necessária na área da saúde, especialmente para melhorar a organização de atendimentos e o gerenciamento de informações. Em muitas clínicas odontológicas, o agendamento de consultas ainda é realizado por meio de métodos tradicionais, como agendas físicas ou atendimento telefônico, o que pode gerar atrasos, falhas de comunicação e dificuldades na organização das agendas dos profissionais.
+
+Diante desse cenário, este trabalho propõe o desenvolvimento de uma plataforma web para gestão de agendamentos em clínicas odontológicas, permitindo que pacientes realizem o agendamento online de consultas e que os profissionais tenham acesso a uma agenda organizada e a registros básicos de pacientes e atendimentos. A solução busca tornar o processo de agendamento mais prático, eficiente e acessível para pacientes e profissionais.
 
 # 1.1. Problema
 
