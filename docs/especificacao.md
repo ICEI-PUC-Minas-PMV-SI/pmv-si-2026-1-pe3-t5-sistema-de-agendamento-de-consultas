@@ -53,27 +53,37 @@ O sistema **não contempla**:
 
 ### 3.3.1 Requisitos Funcionais
 
-| Código | Requisito | Descrição |
-|--------|----------|----------|
-| RF1 | Gerenciar Pacientes | CRUD de pacientes |
-| RF2 | Gerenciar Agendamentos | Agendar, cancelar, remarcar |
-| RF3 | Visualizar Agenda | Exibir horários |
-| RF4 | Gerenciar Dentistas | CRUD de profissionais |
-| RF5 | Login | Autenticação de usuários |
-| RF6 | Horários Disponíveis | Consulta de horários livres |
-| RF7 | Histórico | Registro de atendimentos |
+| Código | Requisito Funcional | Descrição |
+|--------|-------------------|----------|
+| RF1 | O sistema deve cadastrar pacientes | Permitir o registro de novos pacientes com seus dados básicos |
+| RF2 | O sistema deve atualizar dados de pacientes | Permitir a alteração das informações cadastrais dos pacientes |
+| RF3 | O sistema deve remover pacientes | Permitir a exclusão de pacientes do sistema |
+| RF4 | O sistema deve consultar pacientes | Permitir a busca e visualização dos dados dos pacientes cadastrados |
+| RF5 | O sistema deve cadastrar dentistas | Permitir o registro de profissionais da clínica |
+| RF6 | O sistema deve atualizar dados de dentistas | Permitir a alteração das informações dos profissionais |
+| RF7 | O sistema deve remover dentistas | Permitir a exclusão de profissionais do sistema |
+| RF8 | O sistema deve consultar dentistas | Permitir a visualização dos dados dos profissionais cadastrados |
+| RF9 | O sistema deve agendar consultas | Permitir que usuários realizem o agendamento de consultas |
+| RF10 | O sistema deve remarcar consultas | Permitir a alteração de data e horário de consultas existentes |
+| RF11 | O sistema deve cancelar consultas | Permitir o cancelamento de consultas agendadas |
+| RF12 | O sistema deve consultar agenda | Permitir a visualização da agenda dos profissionais por data |
+| RF13 | O sistema deve exibir horários disponíveis | Permitir a consulta de horários livres para agendamento |
+| RF14 | O sistema deve registrar histórico de atendimentos | Armazenar informações básicas das consultas realizadas |
 
 ---
 
 ### 3.3.2 Requisitos Não Funcionais
 
-| Código | Requisito |
-|--------|----------|
-| RNF1 | Sistema web (browser) |
-| RNF2 | Interface responsiva |
-| RNF3 | Autenticação segura |
-| RNF4 | Tempo de resposta < 3s |
-| RNF5 | Interface intuitiva |
+| Código | Requisito Não Funcional | Descrição |
+|--------|------------------------|----------|
+| RNF1 | O sistema deve suportar navegadores web modernos | Garantir funcionamento em Chrome, Firefox e Edge |
+| RNF2 | O sistema deve adaptar a interface a diferentes dispositivos | Permitir uso em desktop, tablet e smartphone |
+| RNF3 | O sistema deve proteger o acesso por autenticação de usuários | Garantir login seguro com usuário e senha |
+| RNF4 | O sistema deve responder às requisições em até 3 segundos | Garantir desempenho adequado nas operações |
+| RNF5 | O sistema deve apresentar interface intuitiva | Facilitar o uso por usuários com diferentes níveis de experiência |
+| RNF6 | O sistema deve garantir a integridade dos dados | Evitar inconsistências e perda de informações |
+| RNF7 | O sistema deve manter disponibilidade durante o horário de funcionamento | Garantir acesso contínuo ao sistema |
+| RNF8 | O sistema deve permitir manutenção e atualização | Facilitar correções e melhorias no sistema |
 
 ---
 
