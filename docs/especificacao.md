@@ -129,6 +129,8 @@ Admin -->|Gerenciar Agendamentos| Sistema
 3. Seleciona data/hora  
 4. Confirma agendamento  
 5. Sistema registra
+
+   Diagrama de Caso de Uso
    <img width="1266" height="668" alt="casos" src="https://github.com/user-attachments/assets/7dc5d67c-5329-4887-83ff-8935c82034ee" />
 
 
