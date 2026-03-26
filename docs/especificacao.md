@@ -250,4 +250,3 @@ Consulta "1" --> "0..1" HistoricoAtendimento
 | 5 | Consulta | Representa os agendamentos realizados entre pacientes e dentistas, contendo data, horário, status e observações |
 | 6 | Agenda | Organiza os horários disponíveis e as consultas associadas a cada dentista |
 | 7 | HistoricoAtendimento | Registra informações básicas sobre atendimentos já realizados |
-| 5 | Usuário | Login e autenticação |
