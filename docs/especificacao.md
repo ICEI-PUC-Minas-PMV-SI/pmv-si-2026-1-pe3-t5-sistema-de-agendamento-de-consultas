@@ -140,44 +140,114 @@ Admin -->|Gerenciar Agendamentos| Sistema
 
 ```mermaid
 classDiagram
-    class Paciente {
-        cpf
-        nome
-        telefone
-        email
-    }
 
-    class Dentista {
-        id
-        nome
-        especialidade
-    }
+class Usuario {
+    int idUsuario
+    String nome
+    String email
+    String login
+    String senhaHash
+    String perfil
+    boolean ativo
 
-    class Consulta {
-        id
-        data
-        horario
-        status
-    }
+    autenticar()
+    logout()
+    alterarSenha()
+}
 
-    class Agenda {
-        data
-        horariosDisponiveis
-    }
+class Administrador {
+    cadastrarPaciente()
+    atualizarPaciente()
+    removerPaciente()
+    cadastrarDentista()
+    atualizarDentista()
+    removerDentista()
+    consultarAgenda()
+}
 
-    Paciente --> Consulta
-    Dentista --> Consulta
-    Agenda --> Consulta
+class Paciente {
+    int idPaciente
+    String nome
+    String cpf
+    Date dataNascimento
+    String telefone
+    String email
+    String endereco
+
+    atualizarDados()
+    consultarHistorico()
+    agendarConsulta()
+    cancelarConsulta()
+}
+
+class Dentista {
+    int idDentista
+    String nome
+    String cro
+    String especialidade
+    String telefone
+    String email
+    boolean ativo
+
+    atualizarDados()
+    visualizarAgenda()
+    registrarAtendimento()
+}
+
+class Consulta {
+    int idConsulta
+    DateTime dataHora
+    String status
+    String observacoes
+    String tipoConsulta
+
+    agendar()
+    remarcar()
+    cancelar()
+    confirmar()
+    concluir()
+}
+
+class Agenda {
+    int idAgenda
+    Date data
+    List horariosDisponiveis
+
+    consultarAgenda()
+    listarHorariosDisponiveis()
+    bloquearHorario()
+    liberarHorario()
+}
+
+class HistoricoAtendimento {
+    int idHistorico
+    DateTime dataAtendimento
+    String descricao
+    String procedimentoRealizado
+    String observacoesClinicas
+
+    registrar()
+    consultar()
+}
+
+Administrador --|> Usuario
+
+Paciente "1" --> "0..*" Consulta
+Dentista "1" --> "0..*" Consulta
+Dentista "1" --> "1" Agenda
+Agenda "1" --> "0..*" Consulta
+Consulta "1" --> "0..1" HistoricoAtendimento
 ```
 
 ---
 
-## 3.4.4 Descrição das Classes
-
 | # | Classe | Descrição |
 |---|--------|----------|
-| 1 | Paciente | Dados do paciente |
-| 2 | Dentista | Dados do profissional |
-| 3 | Consulta | Agendamentos |
-| 4 | Agenda | Controle de horários |
+| 1 | Usuario | Representa o usuário autenticado do sistema, contendo dados de acesso e controle de perfil |
+| 2 | Administrador | Especialização de usuário com permissão para gerenciar pacientes, dentistas e agendas |
+| 3 | Paciente | Armazena os dados cadastrais dos pacientes da clínica e permite operações relacionadas ao agendamento |
+| 4 | Dentista | Representa os profissionais da clínica, com seus dados cadastrais e vínculo com a agenda |
+| 5 | Consulta | Representa os agendamentos realizados entre pacientes e dentistas, contendo data, horário, status e observações |
+| 6 | Agenda | Organiza os horários disponíveis e as consultas associadas a cada dentista |
+| 7 | HistoricoAtendimento | Registra informações básicas sobre atendimentos já realizados |
 | 5 | Usuário | Login e autenticação |
