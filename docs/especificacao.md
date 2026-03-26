@@ -128,7 +128,9 @@ Admin -->|Gerenciar Agendamentos| Sistema
 2. Visualiza horários disponíveis  
 3. Seleciona data/hora  
 4. Confirma agendamento  
-5. Sistema registra  
+5. Sistema registra
+   <img width="1266" height="668" alt="casos" src="https://github.com/user-attachments/assets/7dc5d67c-5329-4887-83ff-8935c82034ee" />
+
 
 **Fluxos Alternativos:**
 - Cancelamento  
