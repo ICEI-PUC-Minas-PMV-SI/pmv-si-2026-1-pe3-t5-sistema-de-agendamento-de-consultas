@@ -101,20 +101,10 @@ O sistema **não contempla**:
 
 ### 3.4.1 Diagrama de Casos de Uso
 
-```mermaid
-graph TD
-Paciente -->|Agendar Consulta| Sistema
-Paciente -->|Cancelar Consulta| Sistema
-Paciente -->|Consultar Horários| Sistema
+<img width="1266" height="668" alt="casos" src="https://github.com/user-attachments/assets/98343121-682c-4586-ae0f-6c44e86c8e2c" />
 
-Dentista -->|Visualizar Agenda| Sistema
 
-Admin -->|Gerenciar Pacientes| Sistema
-Admin -->|Gerenciar Dentistas| Sistema
-Admin -->|Gerenciar Agendamentos| Sistema
-```
 
----
 
 ### 3.4.2 Descrição de Caso de Uso
 
@@ -129,9 +119,6 @@ Admin -->|Gerenciar Agendamentos| Sistema
 3. Seleciona data/hora  
 4. Confirma agendamento  
 5. Sistema registra
-
-   Diagrama de Caso de Uso
-   <img width="1266" height="668" alt="casos" src="https://github.com/user-attachments/assets/7dc5d67c-5329-4887-83ff-8935c82034ee" />
 
 
 **Fluxos Alternativos:**
