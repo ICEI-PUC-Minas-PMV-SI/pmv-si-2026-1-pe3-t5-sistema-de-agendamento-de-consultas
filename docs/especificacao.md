@@ -121,7 +121,7 @@ Admin -->|Gerenciar Agendamentos| Sistema
 #### CSU01 – Gerenciar Agendamento
 
 **Ator Primário:** Paciente  
-**Ator Secundário:** Administrador  
+**Ator Secundário:** Funcionário 
 
 **Fluxo Principal:**
 1. Usuário acessa sistema  
