@@ -54,6 +54,7 @@ O sistema **não contempla**:
 ### 3.3.1 Requisitos Funcionais
 
 | Código | Requisito Funcional | Descrição |
+|-------|-------|-------|
 | RF1 | Fazer login | Login com autenticação |
 | RF2 | Gerenciar pacientes | Processamento de Inclusão, Alteração, Exclusão e Consulta de informações de pacientes |
 | RF3 | Gerenciar dentistas | Processamento de Inclusão, Alteração, Exclusão e Consulta de informações sobre profissionais (dentistas) |
