@@ -54,21 +54,9 @@ O sistema **não contempla**:
 ### 3.3.1 Requisitos Funcionais
 
 | Código | Requisito Funcional | Descrição |
-|--------|-------------------|----------|
-| RF1 | O sistema deve cadastrar pacientes | Permitir o registro de novos pacientes com seus dados básicos |
-| RF2 | O sistema deve atualizar dados de pacientes | Permitir a alteração das informações cadastrais dos pacientes |
-| RF3 | O sistema deve remover pacientes | Permitir a exclusão de pacientes do sistema |
-| RF4 | O sistema deve consultar pacientes | Permitir a busca e visualização dos dados dos pacientes cadastrados |
-| RF5 | O sistema deve cadastrar dentistas | Permitir o registro de profissionais da clínica |
-| RF6 | O sistema deve atualizar dados de dentistas | Permitir a alteração das informações dos profissionais |
-| RF7 | O sistema deve remover dentistas | Permitir a exclusão de profissionais do sistema |
-| RF8 | O sistema deve consultar dentistas | Permitir a visualização dos dados dos profissionais cadastrados |
-| RF9 | O sistema deve agendar consultas | Permitir que usuários realizem o agendamento de consultas |
-| RF10 | O sistema deve remarcar consultas | Permitir a alteração de data e horário de consultas existentes |
-| RF11 | O sistema deve cancelar consultas | Permitir o cancelamento de consultas agendadas |
-| RF12 | O sistema deve consultar agenda | Permitir a visualização da agenda dos profissionais por data |
-| RF13 | O sistema deve exibir horários disponíveis | Permitir a consulta de horários livres para agendamento |
-| RF14 | O sistema deve registrar histórico de atendimentos | Armazenar informações básicas das consultas realizadas |
+
+
+
 
 ---
 
