@@ -64,12 +64,12 @@ O sistema **não contempla**:
 
 ### 3.3.2 Requisitos Não Funcionais
 
-|--------|------------------------|
 | Código | Requisito Não Funcional |
-|----- | Apresentar interface intuitiva |
-| RNF6 | Garantir a integridade dos dados |
-| RNF7 | Manter disponibilidade durante o horário de funcionamento |
-| RNF8 | Permitir manutenção e atualização |
+|----- | ----|
+| RNF1 | O sistema deve suportar navegadores web modernos (Chrome, Firefox, Edge) |
+| RNF2 | O sistema deve ser responsivo, adaptar interface a diferentes dispositivos (desktop, tablet, smartphone) |
+| RNF3 | O sistema deve proteger o acesso por autenticação de usuários |
+| RNF4 | O sistema deve responder às requisições em até 3 segundos |
 
 ---
 
