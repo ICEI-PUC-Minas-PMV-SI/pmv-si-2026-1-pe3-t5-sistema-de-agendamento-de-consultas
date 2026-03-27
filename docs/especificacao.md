@@ -54,24 +54,22 @@ O sistema **não contempla**:
 ### 3.3.1 Requisitos Funcionais
 
 | Código | Requisito Funcional | Descrição |
-
-
-
+| RF1 | Fazer login | Login com autenticação |
+| RF2 | Gerenciar pacientes | Processamento de Inclusão, Alteração, Exclusão e Consulta de informações de pacientes |
+| RF3 | Gerenciar dentistas | Processamento de Inclusão, Alteração, Exclusão e Consulta de informações sobre profissionais (dentistas) |
+| RF4 | Gerenciar agendamentos | Remarcar, cancelar e consultar agendamentos/consultas; incluir consulta de horários disponíveis |
+| RF5 | Registrar histórico de atendimentos | Armazenar informações das consultas realizadas para cada paciente |
 
 ---
 
 ### 3.3.2 Requisitos Não Funcionais
 
-| Código | Requisito Não Funcional | Descrição |
-|--------|------------------------|----------|
-| RNF1 | O sistema deve suportar navegadores web modernos | Garantir funcionamento em Chrome, Firefox e Edge |
-| RNF2 | O sistema deve adaptar a interface a diferentes dispositivos | Permitir uso em desktop, tablet e smartphone |
-| RNF3 | O sistema deve proteger o acesso por autenticação de usuários | Garantir login seguro com usuário e senha |
-| RNF4 | O sistema deve responder às requisições em até 3 segundos | Garantir desempenho adequado nas operações |
-| RNF5 | O sistema deve apresentar interface intuitiva | Facilitar o uso por usuários com diferentes níveis de experiência |
-| RNF6 | O sistema deve garantir a integridade dos dados | Evitar inconsistências e perda de informações |
-| RNF7 | O sistema deve manter disponibilidade durante o horário de funcionamento | Garantir acesso contínuo ao sistema |
-| RNF8 | O sistema deve permitir manutenção e atualização | Facilitar correções e melhorias no sistema |
+|--------|------------------------|
+| Código | Requisito Não Funcional |
+|----- | Apresentar interface intuitiva |
+| RNF6 | Garantir a integridade dos dados |
+| RNF7 | Manter disponibilidade durante o horário de funcionamento |
+| RNF8 | Permitir manutenção e atualização |
 
 ---
 
