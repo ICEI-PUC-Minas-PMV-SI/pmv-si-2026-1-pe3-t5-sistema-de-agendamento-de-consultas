@@ -88,7 +88,8 @@ O sistema **não contempla**:
 
 ### 3.4.1 Diagrama de Casos de Uso
 
-<img width="1266" height="668" alt="casos" src="https://github.com/user-attachments/assets/98343121-682c-4586-ae0f-6c44e86c8e2c" />
+<img width="897" height="553" alt="caso oficial" src="https://github.com/user-attachments/assets/7a38f104-3515-478c-9b09-fc1233a0deee" />
+
 
 
 
