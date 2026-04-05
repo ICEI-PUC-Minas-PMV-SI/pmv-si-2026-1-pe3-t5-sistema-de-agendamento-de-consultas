@@ -95,25 +95,74 @@ O sistema **não contempla**:
 
 
 ### 3.4.2 Descrição de Caso de Uso
-
-#### CSU01 – Gerenciar Agendamento
-
-**Ator Primário:** Paciente  
-**Ator Secundário:** Funcionário 
+#### CSU01 – Fazer Login
+**Ator Primário:** Paciente / Dentista / Administrador
 
 **Fluxo Principal:**
-1. Usuário acessa sistema  
-2. Visualiza horários disponíveis  
-3. Seleciona data/hora  
-4. Confirma agendamento  
-5. Sistema registra
-
+1. Usuário realiza o login com autenticação
+2. Usuário realiza o logout
+3. Usuário altera senha
 
 **Fluxos Alternativos:**
-- Cancelamento  
-- Remarcação  
+- Usuário realiza o cadastro
 
 ---
+
+#### CSU02 – Gerenciar Pacientes
+**Ator Primário:** Administrador
+**Incluso:** CSU01 – Fazer Login
+
+**Fluxo Principal:**
+1. Administrador cadastra pacientes
+2. Administrador atualiza dados de pacientes
+
+**Fluxos Alternativos:**
+- Administrador remove dados de pacientes
+
+---
+
+#### CSU03 – Gerenciar Dentistas
+**Ator Primário:** Administrador
+**Incluso:** CSU01 – Fazer Login
+
+**Fluxo Principal:**
+1. Administrador cadastra dentista
+2. Administrador atualiza dados sobre dentista
+
+**Fluxos Alternativos:**
+- Administrador remove dentista do sistema
+
+---
+
+#### CSU04 – Gerenciar Agendamentos
+**Ator Primário:** Paciente / Administrador / Dentista
+**Incluso:** CSU01 – Fazer Login (Exceto consulta de horários)
+
+**Fluxo Principal:**
+1. Administrador e dentista consultam agendamentos
+2. Paciente agenda consulta
+3. Paciente cancela consulta
+4. Administrador lista horários disponíveis no sistema
+5. Administrador remarca consulta
+6. Administrador confirma consulta
+7. Dentista conclui atendimento
+
+**Fluxos Alternativos:**
+- Administrador bloqueia horários
+- Administrador libera horários
+- Administrador e dentista cancelam consulta
+- Administrador e dentista agendam consulta
+- Paciente remarca consulta
+
+---
+
+#### CSU05 – Registrar Histórico de Atendimentos
+**Ator Primário:** Administrador / Dentista
+**Incluso:** CSU01 – Fazer Login
+
+**Fluxo Principal:**
+1. Administrador ou Dentista registra o atendimento
+2. Administrador ou Dentista consulta histórico de atendimentos
 
 ## 3.4.3 Diagrama de Classes
 
