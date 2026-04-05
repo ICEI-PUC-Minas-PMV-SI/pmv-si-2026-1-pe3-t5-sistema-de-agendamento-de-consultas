@@ -194,12 +194,9 @@ class Administrador {
 }
 
 class Paciente {
-    int idPaciente
-    String nome
     String cpf
     Date dataNascimento
     String telefone
-    String email
     String endereco
 
     atualizarDados()
@@ -209,13 +206,9 @@ class Paciente {
 }
 
 class Dentista {
-    int idDentista
-    String nome
     String cro
     String especialidade
     String telefone
-    String email
-    boolean ativo
 
     atualizarDados()
     visualizarAgenda()
@@ -259,6 +252,8 @@ class HistoricoAtendimento {
 }
 
 Administrador --|> Usuario
+Paciente --|> Usuario
+Dentista --|> Usuario
 
 Paciente "1" --> "0..*" Consulta
 Dentista "1" --> "0..*" Consulta
