@@ -1,8 +1,63 @@
 # 4. PROJETO DO DESIGN DE INTERAÇÃO
 
 ## 4.1 Personas
-Nesta seção você deve detalhar as personas do seu projeto. Deve-se documentar uma persona por integrante do projeto. Para mais informações sobre personas consulte: https://www.rdstation.com/blog/marketing/persona-o-que-e/. Sugere-se a utilização de um template do Canva: https://www.canva.com/pt_br/modelos/s/persona/
 
+### Persona 1 – Paciente
+
+**Nome:** Ana Souza  
+**Idade:** 29 anos  
+**Profissão:** Analista Administrativa  
+**Perfil:** Usuária com rotina corrida, utiliza frequentemente o celular para resolver tarefas do dia a dia.
+
+**Objetivos:**
+- Agendar consultas de forma rápida  
+- Evitar ligações telefônicas  
+- Encontrar horários disponíveis facilmente  
+
+**Dores:**
+- Dificuldade em marcar consultas por telefone  
+- Falta de clareza nos horários disponíveis  
+- Esquecimento de consultas agendadas  
+
+---
+
+### Persona 2 – Dentista
+
+**Nome:** Dr. Carlos Mendes  
+**Idade:** 42 anos  
+**Profissão:** Dentista  
+**Perfil:** Profissional com agenda cheia, precisa de organização e praticidade.
+
+**Objetivos:**
+- Visualizar sua agenda de forma clara  
+- Evitar conflitos de horários  
+- Otimizar seu tempo de atendimento  
+
+**Dores:**
+- Agenda desorganizada  
+- Pacientes faltando ou atrasando  
+- Falta de controle centralizado  
+
+---
+
+### Persona 3 – Administrador
+
+**Nome:** Marina Alves  
+**Idade:** 35 anos  
+**Profissão:** Recepcionista/Administradora  
+**Perfil:** Responsável pelo funcionamento da clínica, possui familiaridade com sistemas básicos.
+
+**Objetivos:**
+- Organizar agenda da clínica  
+- Gerenciar pacientes e profissionais  
+- Reduzir erros de agendamento  
+
+**Dores:**
+- Controle manual da agenda  
+- Erros de marcação  
+- Retrabalho com ligações  
+
+---
 ## 4.2 Mapa de Empatia
 Mapa da Empatia é um material utilizado para conhecer melhor o seu cliente. A partir do mapa da empatia é possível detalhar a personalidade do cliente e compreendê-la melhor. O objetivo é obter um nível mais profundo de compreensão de uma persona. A seguir um exemplo de template que pode ser usado para o mapa de empatia. Para cada persona deverá ser apresentado o seu respectivo mapa de empatia. Sugere-se a utilização do template apresentado em https://www.rdstation.com/blog/marketing/mapa-da-empatia/.
 
