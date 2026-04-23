@@ -38,9 +38,28 @@
 * Inconsistência entre o horário marcado no site e a agenda real do consultório.
 * Dificuldade em cancelar ou remarcar sem precisar falar com um atendente.
 
+  --- 
+
+## Persona 3 - Paciente
+
+**Nome:** Juliana Ferreira
+**Idade:** 28 anos  
+**Profissão:** Analista de SOC 
+**Perfil:** Usuária que tem uma rotina corrida. Valoriza praticidade e rapidez, mas não tem muita paciência com processos longos ou confusos.
+
+### Objetivos
+* Agendar consultas de forma rápida, sem precisar preencher muitos dados.
+* Conseguir visualizar horários disponíveis de forma simples.
+* Receber lembretes para não esquecer consultas.
+
+### Dores
+* Insegurança ao não receber confirmação clara após agendar a consulta.
+* Ter que repetir informações pessoais toda vez que acessa o sistema.
+* Confusão ao tentar reagendar horários próximos ou no mesmo dia.
+
 --- 
 
-### Persona 3 – Dentista
+### Persona 4 – Dentista
 
 **Nome:** Dr. Carlos Mendes  
 **Idade:** 42 anos  
@@ -59,7 +78,7 @@
 
 ---
 
-### Persona 4 – Administrador
+### Persona 5 – Administrador
 
 **Nome:** Marina Alves  
 **Idade:** 35 anos  
