@@ -21,7 +21,26 @@
 
 ---
 
-### Persona 2 – Dentista
+## Persona 2 - Paciente
+
+**Nome:** Marcos Vinícius  
+**Idade:** 35 anos  
+**Profissão:** Engenheiro de Software  
+**Perfil:** Usuário extremamente técnico e metódico, prefere autonomia total em processos, principalmente os digitais, e evita qualquer interação que considere ineficiente.
+
+### Objetivos
+* Agendar consultas de forma 100% autônoma.
+* Filtrar horários por período do dia.
+* Poder reagendar sem burocracia caso surjam imprevistos.
+
+### Dores
+* Interface do sistema de agendamento lenta ou com muitos erros técnicos.
+* Inconsistência entre o horário marcado no site e a agenda real do consultório.
+* Dificuldade em cancelar ou remarcar sem precisar falar com um atendente.
+
+--- 
+
+### Persona 3 – Dentista
 
 **Nome:** Dr. Carlos Mendes  
 **Idade:** 42 anos  
@@ -40,7 +59,7 @@
 
 ---
 
-### Persona 3 – Administrador
+### Persona 4 – Administrador
 
 **Nome:** Marina Alves  
 **Idade:** 35 anos  
