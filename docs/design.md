@@ -12,11 +12,10 @@
 
 ---
 ## 4.3 Protótipos das Interfaces
-Apresente nesta seção os protótipos de alta fidelidade do sistema proposto. A fidelidade do protótipo refere-se ao nível de detalhes e funcionalidades incorporadas a ele. Assim, um protótipo de alta fidelidade é uma representação interativa do produto, baseada no computador ou em dispositivos móveis. Esse protótipo já apresenta maior semelhança com o design final em termos de detalhes e funcionalidades. No desenvolvimento dos protótipos, devem ser considerados os princípios gestálticos, as recomendações ergonômicas e as regras de design (como as 8 regras de ouro). É importante descrever no texto do relatório como os princípios gestálticos e as regras de ouro foram seguidas no projeto das interfaces. Nesta etapa deve-se dar uma ênfase na implementação do software de modo que possam ser realizados os testes com usuários na etapa seguinte.
-
 ### Protótipo login
 #### 1. Objetivo da tela
 A tela de login permite que o usuário acesse o sistema OdontoFlow por meio de autenticação com e-mail e senha previamente cadastrados. Ao clicar no botão “Avançar”, o sistema valida as credenciais e concede acesso caso estejam corretas. A tela também oferece as opções “Esqueci minha senha” e “Criar conta”, permitindo recuperação de acesso ou redirecionamento para cadastro de novos usuários.
+
 <img width="1366" height="768" alt="Login" src="https://github.com/user-attachments/assets/acb3a334-206e-4d00-9ae7-cde7837c5f46" />
 
 ---
@@ -51,6 +50,7 @@ A tela de login permite que o usuário acesse o sistema OdontoFlow por meio de a
 ### Protótipo cadastro
 #### 1. Objetivo da tela
 A tela de cadastro permite que novos usuários criem uma conta no sistema OdontoFlow, informando nome, e-mail e senha. Ao clicar no botão “Avançar”, os dados são registrados no sistema. A opção “Já possuo uma conta” permite retornar à tela de login.
+
 <img width="1366" height="768" alt="Cadastro" src="https://github.com/user-attachments/assets/29213959-4b90-4fff-97d3-e5a45b82a6a5" />
 
 ---
