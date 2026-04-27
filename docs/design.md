@@ -16,14 +16,14 @@
 
 ### Protótipo login
 
-#### 1. Objetivo da tela
+### 1. Objetivo da tela
 A tela de login permite que o usuário acesse o sistema OdontoFlow por meio de autenticação com e-mail e senha previamente cadastrados. Ao clicar no botão “Avançar”, o sistema valida as credenciais e concede acesso caso estejam corretas. A tela também oferece as opções “Esqueci minha senha” e “Criar conta”, permitindo recuperação de acesso ou redirecionamento para cadastro de novos usuários.
 
 <img width="1366" height="768" alt="Login" src="https://github.com/user-attachments/assets/acb3a334-206e-4d00-9ae7-cde7837c5f46" />
 
 ---
 
-#### 2. Aplicação dos Princípios Gestálticos
+### 2. Aplicação dos Princípios Gestálticos
 
 **Proximidade:** Os campos de e-mail e senha estão posicionados próximos, formando um grupo lógico de entrada de dados. As opções “Esqueci minha senha” e “Criar conta” estão agrupadas abaixo, indicando ações secundárias relacionadas.
 
@@ -38,7 +38,7 @@ A tela de login permite que o usuário acesse o sistema OdontoFlow por meio de a
 
 ---
 
-#### 3. Regras de Ouro
+### 3. Regras de Ouro
 
 **Consistência:** Elementos seguem padrão visual uniforme.
 
@@ -55,7 +55,7 @@ A tela de login permite que o usuário acesse o sistema OdontoFlow por meio de a
 
 ---
 
-#### 4. Recomendações Ergonômicas
+### 4. Recomendações Ergonômicas
 
 **Layout simples e limpo:** Evita sobrecarga cognitiva.
 
@@ -72,14 +72,14 @@ A tela de login permite que o usuário acesse o sistema OdontoFlow por meio de a
 
 ### Protótipo cadastro
 
-#### 1. Objetivo da tela
+### 1. Objetivo da tela
 A tela de cadastro permite que novos usuários criem uma conta no sistema OdontoFlow, informando nome, e-mail e senha. Ao clicar no botão “Avançar”, os dados são registrados no sistema. A opção “Já possuo uma conta” permite retornar à tela de login.
 
 <img width="1366" height="768" alt="Cadastro" src="https://github.com/user-attachments/assets/29213959-4b90-4fff-97d3-e5a45b82a6a5" />
 
 ---
 
-#### 2. Princípios Gestálticos
+### 2. Princípios Gestálticos
 
 **Proximidade:** Campos agrupados formam um bloco de cadastro.
 
@@ -93,7 +93,7 @@ A tela de cadastro permite que novos usuários criem uma conta no sistema Odonto
 
 ---
 
-#### 3. Regras de Ouro
+### 3. Regras de Ouro
 
 **Consistência:** Mantém o mesmo padrão da tela de login.
 
@@ -109,7 +109,7 @@ A tela de cadastro permite que novos usuários criem uma conta no sistema Odonto
 
 ---
 
-#### 4. Recomendações Ergonômicas
+### 4. Recomendações Ergonômicas
 
 **Interface objetiva:** Foco direto na tarefa de cadastro.
 
