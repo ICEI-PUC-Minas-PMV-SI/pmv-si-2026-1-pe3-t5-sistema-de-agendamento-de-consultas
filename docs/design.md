@@ -5,6 +5,10 @@
 ### Persona 1 – Izadora Alves
 <img width="1920" height="1080" alt="persona_iza png" src="https://github.com/user-attachments/assets/d8a6a0db-04f9-4b18-ba67-178f61881472" />
 
+### Persona 2 – Juliana Ferreira 
+<img width="1920" height="1080" alt="perfil_persona png" src="![Uploading perfil_persona.png…]()" />
+
+
 
 
 ---
