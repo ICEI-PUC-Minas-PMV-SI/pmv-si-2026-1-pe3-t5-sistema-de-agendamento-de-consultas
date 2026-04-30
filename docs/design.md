@@ -6,6 +6,9 @@
 ### Persona 1 – Izadora Alves
 <img width="1920" height="1080" alt="persona_iza png" src="https://github.com/user-attachments/assets/d8a6a0db-04f9-4b18-ba67-178f61881472" />
 
+### Persona 3 (Administrador) - Pedro Campos
+<img width="1920" height="1080" alt="Persona_Pedro" src="https://github.com/user-attachments/assets/7a880c4e-8077-4e19-b261-7f22b535b9b2" />
+
 ### Persona 4 (Administrador) - Bruna Faria
 <img width="1920" height="1080" alt="Manual da persona apresentação" src="https://github.com/user-attachments/assets/f51d1139-8588-453a-9e5b-47568d5c4b3a" />
 
@@ -17,6 +20,9 @@
 
 ### Persona 1 – Izadora Alves
 <img width="1920" height="1080" alt="mapa_empatia_iza png" src="https://github.com/user-attachments/assets/d4ab4acf-b3f3-4da8-bee0-44359f51aec6" />
+
+### Persona 3 (Administrador) - Pedro Campos
+<img width="1920" height="1080" alt="mapa_empatia_pedro" src="https://github.com/user-attachments/assets/c430e365-bc60-4bd7-adf1-c8bfc3ebb59b" />
 
 ### Persona 4 (Administrador) - Bruna Faria
 
