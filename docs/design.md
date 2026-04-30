@@ -1,3 +1,4 @@
+
 # 4. PROJETO DO DESIGN DE INTERAÇÃO
 
 ## 4.1 Personas
@@ -11,12 +12,16 @@
 
 
 
----
+
 ## 4.2 Mapa de Empatia
 
 ### Persona 1 – Izadora Alves
 <img width="1920" height="1080" alt="mapa_empatia_iza png" src="https://github.com/user-attachments/assets/d4ab4acf-b3f3-4da8-bee0-44359f51aec6" />
+
 ### Persona 4 (Administrador) - Bruna Faria
+
+<img width="1920" height="1080" alt="Blue Yellow Simple Empathy Map Brainstorm" src="https://github.com/user-attachments/assets/23e50d72-4c2f-4263-90a6-91abefd67364" />
+
 ---
 ## 4.3 Protótipos das Interfaces
 
