@@ -1,3 +1,5 @@
+https://github.com/user-attachments/assets/36cac50c-8968-41e3-8635-d353848198ac)
+
 
 # 4. PROJETO DO DESIGN DE INTERAÇÃO
 
@@ -5,6 +7,9 @@
 
 ### Persona 1 – Izadora Alves
 <img width="1920" height="1080" alt="persona_iza png" src="https://github.com/user-attachments/assets/d8a6a0db-04f9-4b18-ba67-178f61881472" />
+
+### Persona 2 (Paciente) - Juliana Ferreira
+<img width="1920" height="1080" alt="perfil_persona png" src="https://github.com/user-attachments/assets/36cac50c-8968-41e3-8635-d353848198ac)" />
 
 ### Persona 3 (Administrador) - Pedro Campos
 <img width="1920" height="1080" alt="Persona_Pedro" src="https://github.com/user-attachments/assets/7a880c4e-8077-4e19-b261-7f22b535b9b2" />
@@ -20,6 +25,9 @@
 
 ### Persona 1 – Izadora Alves
 <img width="1920" height="1080" alt="mapa_empatia_iza png" src="https://github.com/user-attachments/assets/d4ab4acf-b3f3-4da8-bee0-44359f51aec6" />
+
+### Persona 2 (Paciente) - Juliana Ferreira
+<img width="1920" height="1080" alt="Mapa de empatia" src="https://github.com/user-attachments/assets/bfa041fd-6931-49fe-9c61-7224a8a450d2" />
 
 ### Persona 3 (Administrador) - Pedro Campos
 <img width="1920" height="1080" alt="mapa_empatia_pedro" src="https://github.com/user-attachments/assets/c430e365-bc60-4bd7-adf1-c8bfc3ebb59b" />
