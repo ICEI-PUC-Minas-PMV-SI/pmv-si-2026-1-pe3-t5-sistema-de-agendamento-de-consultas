@@ -9,7 +9,7 @@
 <img width="1920" height="1080" alt="persona_iza png" src="https://github.com/user-attachments/assets/d8a6a0db-04f9-4b18-ba67-178f61881472" />
 
 ### Persona 2 (Paciente) - Juliana Ferreira
-<img width="1920" height="1080" alt="perfil_persona png" src="https://github.com/user-attachments/assets/5aa04bfe-da36-45c2-953b-c7d8a1b02863)" />
+<img width="1920" height="1080" alt="Manual da persona apresentação" src="https://github.com/user-attachments/assets/df11a086-4e35-4dcb-b390-50ee5ee89c8a" />
 
 ### Persona 3 (Administrador) - Pedro Campos
 <img width="1920" height="1080" alt="Persona_Pedro" src="https://github.com/user-attachments/assets/7a880c4e-8077-4e19-b261-7f22b535b9b2" />
