@@ -1,4 +1,4 @@
-https://github.com/user-attachments/assets/36cac50c-8968-41e3-8635-d353848198ac)
+
 
 
 # 4. PROJETO DO DESIGN DE INTERAÇÃO
@@ -9,7 +9,7 @@ https://github.com/user-attachments/assets/36cac50c-8968-41e3-8635-d353848198ac)
 <img width="1920" height="1080" alt="persona_iza png" src="https://github.com/user-attachments/assets/d8a6a0db-04f9-4b18-ba67-178f61881472" />
 
 ### Persona 2 (Paciente) - Juliana Ferreira
-<img width="1920" height="1080" alt="perfil_persona png" src="https://github.com/user-attachments/assets/36cac50c-8968-41e3-8635-d353848198ac)" />
+<img width="1920" height="1080" alt="perfil_persona png" src="https://github.com/user-attachments/assets/5aa04bfe-da36-45c2-953b-c7d8a1b02863)" />
 
 ### Persona 3 (Administrador) - Pedro Campos
 <img width="1920" height="1080" alt="Persona_Pedro" src="https://github.com/user-attachments/assets/7a880c4e-8077-4e19-b261-7f22b535b9b2" />
