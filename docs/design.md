@@ -11,10 +11,13 @@
 ### Persona 2 (Paciente) - Juliana Ferreira
 <img width="1920" height="1080" alt="Manual da persona apresentação" src="https://github.com/user-attachments/assets/df11a086-4e35-4dcb-b390-50ee5ee89c8a" />
 
-### Persona 3 (Administrador) - Pedro Campos
+### Persona 3 (Paciente) - Fernando Correa
+<img width="1920" height="1080" alt="Manual da persona apresentação" src="https://github.com/user-attachments/assets/9f5cc47c-9fa4-4d0e-85c0-3b0590aaf27b" />
+
+### Persona 4 (Administrador) - Pedro Campos
 <img width="1920" height="1080" alt="Persona_Pedro" src="https://github.com/user-attachments/assets/7a880c4e-8077-4e19-b261-7f22b535b9b2" />
 
-### Persona 4 (Administrador) - Bruna Faria
+### Persona 5 (Administrador) - Bruna Faria
 <img width="1920" height="1080" alt="Manual da persona apresentação" src="https://github.com/user-attachments/assets/f51d1139-8588-453a-9e5b-47568d5c4b3a" />
 
 
@@ -29,10 +32,13 @@
 ### Persona 2 (Paciente) - Juliana Ferreira
 <img width="1920" height="1080" alt="Mapa de empatia" src="https://github.com/user-attachments/assets/bfa041fd-6931-49fe-9c61-7224a8a450d2" />
 
-### Persona 3 (Administrador) - Pedro Campos
+### Persona 3 (Paciente) - Fernando Correa
+<img width="1920" height="1080" alt="Blue Yellow Simple Empathy Map Brainstorm" src="https://github.com/user-attachments/assets/06280ec8-9564-4739-b75f-1bf8d72c1e39" />
+
+### Persona 4 (Administrador) - Pedro Campos
 <img width="1920" height="1080" alt="mapa_empatia_pedro" src="https://github.com/user-attachments/assets/c430e365-bc60-4bd7-adf1-c8bfc3ebb59b" />
 
-### Persona 4 (Administrador) - Bruna Faria
+### Persona 5 (Administrador) - Bruna Faria
 
 <img width="1920" height="1080" alt="Blue Yellow Simple Empathy Map Brainstorm" src="https://github.com/user-attachments/assets/23e50d72-4c2f-4263-90a6-91abefd67364" />
 
@@ -148,6 +154,55 @@ A tela de cadastro permite que novos usuários criem uma conta no sistema Odonto
 
 ---
 
+### Protótipo Agendar Consulta
+
+### 1. Objetivo da tela
+A tela de Agendamento de Consulta permite que o usuário do sistema OdontoFlow gerencie o fluxo de atendimentos de forma rápida e organizada. Através da seleção do paciente e do dentista, aliada à escolha de data, horário e tipo de procedimento, o usuário define os detalhes da consulta de maneira intuitiva. Ao clicar em 'Confirmar Agendamento', o sistema valida a disponibilidade e registra o compromisso na agenda da clínica, garantindo a organização dos atendimentos.
+
+<img width="1366" height="768" alt="prototipo" src="https://github.com/user-attachments/assets/c467e5ce-d071-44aa-8053-180c3bc70cf5" />
+
+---
+
+### 2. Princípios Gestálticos
+**Proximidade:** Os campos de seleção (paciente e dentista) e o bloco de data/horário estão agrupados de forma a indicar que pertencem à mesma etapa do fluxo de agendamento.
+
+**Similaridade:** Todos os campos de seleção e os botões de horário utilizam o mesmo padrão visual de bordas arredondadas e cores da marca, facilitando o reconhecimento de elementos interativos.
+
+**Figura-fundo:** O container branco com bordas suaves destaca o formulário de agendamento sobre o fundo azul marinho profundo, focando a atenção total do usuário na tarefa.
+
+**Continuidade:** A disposição dos elementos segue uma ordem lógica (quem -> com quem -> quando -> o quê), orientando o olhar do usuário do topo até o botão de confirmação.
+
+**Foco:** O botão “Confirmar Agendamento” possui preenchimento sólido em azul marinho, contrastando com os campos vazados e tornando-se o ponto de maior peso visual para a ação final.
+
+**
+
+### 3. Regras de Ouro
+**Consistência:** A interface mantém a paleta de cores, tipografia e o estilo de arredondamento de botões vistos na tela de login, reforçando a identidade do sistema.
+
+**Feedback imediato:** A seleção de horários e datas oferece resposta visual clara.
+
+**Prevenção de erros:** O uso de seletores e calendários em vez de campos de texto livre.
+
+**Redução da carga de memória:** O sistema exibe apenas as informações necessárias para o agendamento, utilizando ícones intuitivos.
+
+**Controle do usuário:** A estrutura permite que o usuário altere qualquer campo ou escolha um horário diferente antes de clicar no botão final de confirmação.
+
+**Fechamento de ciclo:** A ação de confirmar o agendamento conclui claramente o processo de marcação.
+
+---
+
+### 4. Recomendações Ergonômicas
+**Interface objetiva:** Elimina distrações, mantendo apenas os elementos essenciais.
+
+**Campos bem distribuídos:** O espaçamento entre os botões de horário e os campos de seleção previne cliques acidentais e facilita a navegação.
+
+**Boa legibilidade:** O contraste entre o texto azul marinho e o fundo claro garante que as marcas dos campos e as opções do calendário sejam lidos claramente.
+
+**Ações bem definidas:** Há uma diferença clara entre a entrada de dados (campos vazados) e a conclusão da tarefa (botão sólido).
+
+**Baixa carga cognitiva:** O layout familiar e a linguagem simples permitem que o usuário opere a tela de forma quase automática.
+
+---
 
 ## 4.4 Testes com Protótipos
 Nesta seção você deve apresentar os testes realizados com usuários utilizando os protótipos de alta fidelidade desenvolvidos na seção anterior. O objetivo é avaliar a usabilidade, a clareza das informações e a adequação do design às necessidades das personas definidas no projeto.
