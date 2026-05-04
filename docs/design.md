@@ -174,7 +174,7 @@ A tela de Agendamento de Consulta permite que o usuário do sistema OdontoFlow g
 
 **Foco:** O botão “Confirmar Agendamento” possui preenchimento sólido em azul marinho, contrastando com os campos vazados e tornando-se o ponto de maior peso visual para a ação final.
 
-**
+---
 
 ### 3. Regras de Ouro
 **Consistência:** A interface mantém a paleta de cores, tipografia e o estilo de arredondamento de botões vistos na tela de login, reforçando a identidade do sistema.
@@ -201,6 +201,54 @@ A tela de Agendamento de Consulta permite que o usuário do sistema OdontoFlow g
 **Ações bem definidas:** Há uma diferença clara entre a entrada de dados (campos vazados) e a conclusão da tarefa (botão sólido).
 
 **Baixa carga cognitiva:** O layout familiar e a linguagem simples permitem que o usuário opere a tela de forma quase automática.
+
+---
+
+### Protótico Perfil / Configurações de Usuário
+
+### 1. Obejtivo da tela
+A tela de configurações do OdontoFlow tem como propósito oferecer ao usuário um espaço intuitivo e organizado para gerenciar suas informações pessoais, atualizar a senha e definir preferências de uso, garantindo autonomia e segurança na experiência. O design foi pensado para ser simples, direto e visualmente coerente com o restante do sistema, reforçando a identidade da marca e facilitando o acesso às principais funções de gerenciamento da conta.
+
+<img width="1024" height="1536" alt="Modelo_perfil" src="https://github.com/user-attachments/assets/16ca4b1c-f324-4fdb-9bda-9fc2301e2b42" />
+
+---
+
+### 2. Princípios Gestálticos
+**Proximidade:** Elementos relacionados estão agrupados em blocos funcionais (dados, senha, preferências).
+
+**Similaridade:** Campos e botões seguem o mesmo padrão visual, reforçando consistência.
+
+**Figura-fundo:** Contraste entre fundo azul e caixas brancas destaca áreas de interação.
+
+**Continuidade:** O fluxo vertical guia o olhar naturalmente do topo ao botão “Sair”.
+
+**Unidade:** O uso de cores e tipografia cria uma identidade visual coesa e reconhecível.
+
+---
+
+### 3. Regras de Ouro
+**Consistência:** Mesma estrutura e comportamento em todas as telas do sistema.
+
+**Feedback:** Mensagens claras ao salvar ou sair, garantindo retorno imediato ao usuário.
+
+**Prevenção de erros:** Validação de campos e confirmação de senha antes de salvar.
+
+**Reversibilidade:** Possibilidade de cancelar alterações antes da confirmação.
+
+**Controle do usuário:** Liberdade para ajustar preferências e realizar logout facilmente.
+
+---
+
+### 4. Recomendações Ergonômicas
+**Clareza visual:** Contraste adequado e tipografia legível para leitura confortável.
+
+**Agrupamento lógico:** Informações organizadas em seções bem delimitadas e intuitivas.
+
+**Acessibilidade:** Botões e campos posicionados de forma a facilitar o uso por diferentes perfis de usuário.
+
+**Carga cognitiva reduzida:** interface limpa e objetiva, evitando distrações desnecessárias.
+
+**Compatibilidade responsiva:** espaçamento equilibrado e hierarquia de informações que favorecem a navegação natural.
 
 ---
 
