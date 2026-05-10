@@ -8,6 +8,9 @@
 ### Persona 1 (Dentista) – Izadora Alves
 <img width="1920" height="1080" alt="persona_iza png" src="https://github.com/user-attachments/assets/d8a6a0db-04f9-4b18-ba67-178f61881472" />
 
+### Persona 2 (Dentista) - Roberto Alcântara
+<img width="1920" height="1080" alt="Persona Roberto Alcantara" src="https://github.com/user-attachments/assets/15f05ea0-342b-4f3a-b60d-c9d7c0ce6946" />
+
 ### Persona 3 (Paciente) - Carlos Henrique
 <img width="1920" height="1080" alt="Persona Carlos Henrique" src="https://github.com/user-attachments/assets/586c7631-15c5-46e3-bcf3-19fb29de5a6e" />
 
@@ -31,6 +34,9 @@
 
 ### Persona 1 (Dentista) – Izadora Alves
 <img width="1920" height="1080" alt="mapa_empatia_iza png" src="https://github.com/user-attachments/assets/d4ab4acf-b3f3-4da8-bee0-44359f51aec6" />
+
+### Persona 2 (Dentista) - Roberto Alcântara
+<img width="1920" height="1080" alt="Mapa empatia Roberto" src="https://github.com/user-attachments/assets/1473b427-0d29-414e-88a2-6a974735e70f" />
 
 ### Persona 3 (Paciente) - Carlos Henrique
 <img width="1920" height="1080" alt="Mapa empatia Carlos Henrique" src="https://github.com/user-attachments/assets/5c958ffe-f551-44c4-9335-e99c277dc72c" />
