@@ -165,6 +165,41 @@ A tela de cadastro permite que novos usuários criem uma conta no sistema Odonto
 
 ---
 
+### Protótipo Dashboard (inicio) 
+
+### 1. Objetivo da tela
+A tela de Agendamento de Consulta permite que o usuário do sistema OdontoFlow sendo ele um administrador do Backoffice, Dentista ou Paciente consiga um resumo simples e claro do seu dia, o que vai fazer e qual a estimativa de tempo dos atendimentos.
+
+<img width="1366" height="768" alt="Dashboard" src="https://github.com/user-attachments/assets/5beea3e9-33d5-48d6-b7f6-669ffae4c429" />
+
+### 2. Aplicação dos Princípios Gestálticos
+
+* **Proximidade:** Os cards de métricas (*Consultas Agendadas*, *Desmarcadas* e *Horários Livres*) estão posicionados próximos no topo da tela, indicando que formam um grupo lógico de resumo diário. No menu lateral, os itens de navegação também estão agrupados, separando a zona de controle do conteúdo principal.
+* **Similaridade:** Os cards de resumo utilizam o mesmo padrão visual (cor de fundo, bordas e tipografia), facilitando a identificação de que se trata do mesmo tipo de dado (estatísticas). Os itens da tabela de atendimentos também seguem um padrão uniforme.
+* **Figura-fundo:** O painel central do Dashboard (claro) se destaca claramente sobre o fundo azul marinho da aplicação, direcionando o foco do usuário para a área interativa de dados.
+* **Continuidade:** A seção de "Próximos atendimentos" segue uma organização vertical lógica. O alinhamento dos horários e nomes guia o olhar do usuário de forma natural para a leitura da agenda.
+* **Foco:** O uso de cores contrastantes nas tags de status (ex: "Confirmado" em verde) cria pontos de destaque imediato, permitindo a leitura rápida da situação de cada agendamento.
+
+---
+
+### 3. Regras de Ouro
+
+* **Consistência:** O sistema mantém um padrão visual uniforme em termos de paleta de cores, ícones e fontes em todos os módulos visíveis.
+* **Feedback imediato:** A interface fornece indicadores visuais claros, como o status dos agendamentos, informando o estado atual do sistema ao usuário.
+* **Prevenção de erros:** A organização tabular dos dados (Horário | Paciente | Procedimento) reduz a probabilidade de preenchimento ou leitura incorreta das informações.
+* **Redução da carga de memória:** Informações críticas, como o total de consultas do dia, são sintetizadas em cards, evitando que o usuário precise processar toda a lista para obter um panorama geral.
+* **Controle do usuário:** O menu lateral oferece opções claras e diretas de navegação (Início, Agendamentos, Pacientes, Histórico), permitindo que o usuário alterne entre tarefas com facilidade.
+
+---
+
+### 4. Recomendações Ergonômicas
+
+* **Layout simples e limpo:** O design evita a sobrecarga cognitiva ao utilizar espaços em branco de forma estratégica, focando no que é essencial para o profissional de odontologia.
+* **Hierarquia visual:** Elementos numéricos importantes (como o contador de consultas) possuem maior peso visual, facilitando a identificação da ação ou informação principal.
+* **Espaçamento adequado:** A tabela de atendimentos possui respiro suficiente entre as linhas, o que melhora a legibilidade e evita fadiga visual durante o uso prolongado.
+* **Uso de cores contrastantes:** A combinação de texto escuro sobre fundo claro na área de trabalho principal garante uma visualização nítida dos dados.
+* **Facilidade de navegação:** A estrutura de menus e o fluxo de informações são intuitivos, permitindo que o usuário entenda rapidamente como operar o sistema.
+
 ### Protótipo Agendar Consulta
 
 ### 1. Objetivo da tela
