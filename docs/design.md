@@ -205,7 +205,8 @@ A tela de Agendamento de Consulta permite que o usuário do sistema OdontoFlow s
 ### 1. Objetivo da tela
 A tela de Agendamento de Consulta permite que o usuário do sistema OdontoFlow gerencie o fluxo de atendimentos de forma rápida e organizada. Através da seleção do paciente e do dentista, aliada à escolha de data, horário e tipo de procedimento, o usuário define os detalhes da consulta de maneira intuitiva. Ao clicar em 'Confirmar Agendamento', o sistema valida a disponibilidade e registra o compromisso na agenda da clínica, garantindo a organização dos atendimentos.
 
-<img width="1366" height="768" alt="prototipo" src="https://github.com/user-attachments/assets/c467e5ce-d071-44aa-8053-180c3bc70cf5" />
+<img width="1366" height="768" alt="Agendamento" src="https://github.com/user-attachments/assets/77854539-7336-4c8c-9b5d-27cc685aaec7" />
+
 
 ---
 
