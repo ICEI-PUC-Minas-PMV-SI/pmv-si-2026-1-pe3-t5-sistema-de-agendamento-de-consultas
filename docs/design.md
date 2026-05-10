@@ -200,6 +200,41 @@ A tela de Agendamento de Consulta permite que o usuário do sistema OdontoFlow s
 * **Uso de cores contrastantes:** A combinação de texto escuro sobre fundo claro na área de trabalho principal garante uma visualização nítida dos dados.
 * **Facilidade de navegação:** A estrutura de menus e o fluxo de informações são intuitivos, permitindo que o usuário entenda rapidamente como operar o sistema.
 
+### Protótipo Agenda / Calendário
+
+### 1. Objetivo da tela
+A tela de Agenda / Calendário permite que o usuário do sistema OdontoFlow — sendo ele um administrador do Backoffice ou Dentista — visualize e gerencie os horários de atendimento de forma prática e organizada. A interface possibilita acompanhar horários disponíveis e ocupados, identificar pacientes agendados e executar ações rápidas como remarcar, cancelar ou visualizar detalhes de consultas.
+
+<img width="1675" height="939" alt="agenda⁄calendario" src="https://github.com/user-attachments/assets/3b465365-c07e-4c4c-8eb9-96b165f20c96" />
+
+### 2. Aplicação dos Princípios Gestálticos
+
+* **Proximidade:** Os horários e respectivos atendimentos estão organizados em blocos próximos, facilitando a associação imediata entre horário, paciente e procedimento. Os controles superiores (Dia, Semana, Navegação de Data e Seleção de Dentista) também formam grupos funcionais bem definidos.
+* **Similaridade:** Todos os blocos de agendamento seguem o mesmo padrão visual de estrutura, tipografia e espaçamento. Os horários disponíveis utilizam o mesmo estilo entre si, enquanto os atendimentos confirmados mantêm consistência visual para rápida identificação.
+* **Figura-fundo:** A área principal do calendário utiliza fundo claro contrastando com o menu lateral em azul escuro, destacando visualmente a região de interação principal do usuário.
+* **Continuidade:** A distribuição vertical dos horários cria um fluxo natural de leitura cronológica, permitindo que o usuário acompanhe facilmente a sequência do dia.
+* **Foco:** O uso de cores de status (verde para confirmado, vermelho para cancelado e azul tracejado para disponível) direciona rapidamente a atenção do usuário para a situação de cada horário.
+
+---
+
+### 3. Regras de Ouro
+
+* **Consistência:** O sistema mantém o mesmo padrão visual utilizado nas demais telas da aplicação, preservando identidade visual, navegação lateral, ícones e componentes.
+* **Feedback imediato:** Os status visuais dos atendimentos permitem que o usuário compreenda instantaneamente a disponibilidade e situação de cada consulta.
+* **Prevenção de erros:** A separação clara entre horários ocupados, disponíveis e intervalos reduz o risco de conflitos de agendamento e facilita a interpretação das informações.
+* **Redução da carga de memória:** Todas as informações relevantes do atendimento (horário, paciente, procedimento e status) são exibidas diretamente na agenda, evitando necessidade de navegação excessiva.
+* **Controle do usuário:** O menu contextual de ações permite executar operações importantes como remarcar, cancelar ou visualizar detalhes diretamente no agendamento selecionado.
+
+---
+
+### 4. Recomendações Ergonômicas
+
+* **Layout organizado:** A estrutura da agenda foi projetada para permitir rápida leitura dos horários e atendimentos, minimizando esforço cognitivo.
+* **Hierarquia visual:** Os horários possuem destaque lateral fixo, enquanto nomes de pacientes e procedimentos recebem diferenciação tipográfica para melhor escaneabilidade.
+* **Espaçamento adequado:** O espaçamento entre blocos de horário melhora a legibilidade e evita poluição visual em agendas com muitos atendimentos.
+* **Uso de cores contrastantes:** As diferentes cores de status auxiliam na identificação rápida da situação de cada consulta sem depender exclusivamente de texto.
+* **Facilidade de navegação:** A alternância entre visualização diária e semanal, combinada com navegação por datas e filtro por dentista, torna o gerenciamento da agenda mais intuitivo e eficiente.
+
 ### Protótipo Agendar Consulta
 
 ### 1. Objetivo da tela
