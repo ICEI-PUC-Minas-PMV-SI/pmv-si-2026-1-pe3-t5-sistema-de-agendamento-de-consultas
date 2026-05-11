@@ -27,9 +27,6 @@
 <img width="1920" height="1080" alt="Manual da persona apresentação" src="https://github.com/user-attachments/assets/f51d1139-8588-453a-9e5b-47568d5c4b3a" />
 
 
-
-
-
 ## 4.2 Mapa de Empatia
 
 ### Persona 1 (Dentista) – Izadora Alves
@@ -346,40 +343,54 @@ Os resultados obtidos por todos os integrantes devem ser consolidados, apresenta
 ## Pesquisa de Usabilidade do Sistema
 <img width="958" height="443" alt="image" src="https://github.com/user-attachments/assets/fe09d785-8514-41cb-8c0b-4f7ad9522daf" />
 
+---
+
 
 <img width="953" height="446" alt="image" src="https://github.com/user-attachments/assets/887d9d7c-15d6-4e3b-b5a5-97f508eea9c3" />
+
+---
 
 
 <img width="960" height="440" alt="image" src="https://github.com/user-attachments/assets/213a9575-1efc-4713-9d12-dd53e77ef07e" />
 
+---
+
 <img width="954" height="468" alt="image" src="https://github.com/user-attachments/assets/7bb763a6-cc43-46af-a50a-7d8eba81d4c5" />
+
+---
 
 <img width="951" height="442" alt="image" src="https://github.com/user-attachments/assets/297ecc55-a075-47bd-bff4-f8cb86078b9e" />
 
+---
+
 <img width="945" height="439" alt="image" src="https://github.com/user-attachments/assets/df32c593-537c-44f7-9745-c008a274a66e" />
+
+---
 
 <img width="956" height="442" alt="image" src="https://github.com/user-attachments/assets/8d43b282-362b-4254-8d07-d0476c27a8bf" />
 
+---
+
 <img width="950" height="433" alt="image" src="https://github.com/user-attachments/assets/d8eedc9d-7a5d-4ef4-8ef9-98d3f41cce23" />
+
+---
 
 <img width="955" height="433" alt="image" src="https://github.com/user-attachments/assets/c11201b1-da1d-4a34-a036-58829900066a" />
 
+---
+
 <img width="945" height="439" alt="image" src="https://github.com/user-attachments/assets/7fb5a45c-0bbd-4f42-9a62-44e34782e516" />
+
+---
 
 <img width="951" height="313" alt="image" src="https://github.com/user-attachments/assets/0867a2e4-67d7-4cd8-b4e8-1d7b929dd5d5" />
 
+---
+
 <img width="949" height="300" alt="image" src="https://github.com/user-attachments/assets/077f2313-d52a-4e2d-aba9-dd2b8402f50f" />
+
+---
 
 <img width="948" height="304" alt="image" src="https://github.com/user-attachments/assets/bccad126-43d7-4485-a9bc-f22296824b39" />
 
-
-
-
-
-
-
-
-
-
-
-
+---
