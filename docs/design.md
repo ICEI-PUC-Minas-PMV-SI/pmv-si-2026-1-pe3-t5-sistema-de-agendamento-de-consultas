@@ -341,6 +341,16 @@ Durante a aplicação do teste, registre observações sobre comportamentos, dú
 Os resultados obtidos por todos os integrantes devem ser consolidados, apresentando uma análise geral com os principais problemas encontrados, oportunidades de melhoria e as ações previstas para o projeto final.
 
 ## Pesquisa de Usabilidade do Sistema
+
+A pesquisa de usabilidade teve como principal objetivo avaliar a qualidade da experiência do usuário ao interagir com o sistema OdontoFlow, especialmente em sua versão inicial de desenvolvimento. A intenção foi coletar percepções reais dos usuários sobre o funcionamento do sistema, identificando pontos fortes e possíveis dificuldades no uso, a fim de orientar melhorias nas próximas etapas do projeto, seguindo uma abordagem iterativa de desenvolvimento.
+
+Para isso, foram definidos alguns parâmetros essenciais a serem avaliados. Entre eles, destaca-se a **facilidade de uso**, buscando entender se o sistema é intuitivo e de fácil aprendizado, mesmo para usuários que não possuem familiaridade prévia com a ferramenta. Também foi analisada a **clareza das informações e organização das interfaces**, verificando se os elementos apresentados nas telas são compreensíveis e bem estruturados.
+
+Outro aspecto importante avaliado foi a **eficiência na execução de tarefas**, ou seja, se os usuários conseguem realizar ações como login, cadastro e agendamento de consultas de forma rápida e sem obstáculos. Além disso, foram considerados critérios de **consistência visual e qualidade do design**, observando se o sistema mantém um padrão entre as telas e se transmite uma aparência profissional e agradável.
+
+Por fim, a pesquisa também buscou identificar percepções relacionadas à **experiência geral do usuário**, incluindo aspectos subjetivos como satisfação, conforto durante o uso e sugestões de melhoria. Esses parâmetros, analisados em conjunto, permitem uma visão abrangente da usabilidade do sistema e servem como base para a tomada de decisões na evolução do projeto.
+
+
 <img width="958" height="443" alt="image" src="https://github.com/user-attachments/assets/fe09d785-8514-41cb-8c0b-4f7ad9522daf" />
 
 ---
@@ -394,3 +404,11 @@ Os resultados obtidos por todos os integrantes devem ser consolidados, apresenta
 <img width="948" height="304" alt="image" src="https://github.com/user-attachments/assets/bccad126-43d7-4485-a9bc-f22296824b39" />
 
 ---
+
+Os resultados obtidos na avaliação de usabilidade indicam que o sistema OdontoFlow apresenta uma boa aceitação geral por parte dos usuários. De forma geral, os participantes consideraram o sistema simples, prático e fácil de utilizar, destacando principalmente a clareza das telas e a facilidade no processo de agendamento de consultas. Esses pontos evidenciam que o sistema atende bem aos requisitos básicos de usabilidade, como facilidade de aprendizado, eficiência na execução de tarefas e organização das informações.
+
+Além disso, não foram identificadas dificuldades relevantes durante o uso, o que reforça que a navegação é intuitiva e que os usuários conseguem realizar as principais ações sem necessidade de suporte adicional. Esse resultado é importante, pois indica que o sistema já se encontra em um nível satisfatório de maturidade funcional.
+
+Por outro lado, os feedbacks também apontaram algumas oportunidades de melhoria. Entre elas, destaca-se a necessidade de aprimorar o design visual, que foi considerado pouco moderno por alguns usuários, além da sugestão de incluir mais informações em determinadas funcionalidades, como processos de cancelamento e acompanhamento de atendimentos. Também foi mencionada a possibilidade de tornar algumas tarefas mais objetivas.
+
+Dessa forma, conclui-se que o sistema possui uma base sólida e funcional, atendendo bem às necessidades principais dos usuários. No entanto, existem pontos de melhoria que podem ser trabalhados nas próximas etapas do desenvolvimento, especialmente relacionados à evolução do design e ao refinamento da experiência do usuário, contribuindo para tornar o sistema ainda mais completo e agradável de utilizar.
