@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGACO - Dashboard OdontoFlow</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="components/sidebar/sidebar.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+    <div class="app-layout">
+        <div id="sidebar-container"></div>
+
+        <main class="dashboard-wrapper">
+            <div class="dashboard-card-container">
+                <header class="dashboard-header">
+                    <h1 class="dashboard-title">Dashboard</h1>
+
+                    <div class="header-controls">
+                        <div class="user-profile">
+                            <span class="user-badge" id="logged-user">Administrador: Pedro Campos</span>
+                        </div>
+                    </div>
+                </header>
+
+                <section class="metrics-section">
+                    <h2 class="section-title">Resumo do dia</h2>
+                    <div class="metrics-grid">
+                        <div class="metric-card" id="card-agendadas">
+                            <div class="metric-value" id="val-agendadas">0</div>
+                            <div class="metric-label">CONSULTAS AGENDADAS</div>
+                        </div>
+                        <div class="metric-card" id="card-desmarcadas">
+                            <div class="metric-value" id="val-desmarcadas">0</div>
+                            <div class="metric-label">CONSULTAS DESMARCADAS</div>
+                        </div>
+                        <div class="metric-card" id="card-livres">
+                            <div class="metric-value" id="val-livres">0</div>
+                            <div class="metric-label">HORÁRIOS LIVRES</div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="appointments-section">
+                    <h2 class="section-title">Próximos atendimentos</h2>
+
+                    <div class="table-container">
+                        <table class="appointments-table" id="appointments-table">
+                            <thead>
+                                <tr>
+                                    <th>Horário</th>
+                                    <th>Paciente</th>
+                                    <th>Procedimento</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="appointments-tbody">
+                            </tbody>
+                        </table>
+                        <div class="no-records-message" id="no-records" style="display: none;">
+                            Nenhum atendimento agendado para hoje.
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/storage.js"></script>
+    <script src="components/sidebar/sidebar.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+
+</html>
