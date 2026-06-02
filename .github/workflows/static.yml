@@ -16,7 +16,6 @@ permissions:
   id-token: write
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -35,22 +34,23 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      # ---- AJUSTE AQUI: Prepara a pasta para o Pages ----
+      # ---- SOLUÇÃO DO JAVASCRIPT CORRIGIDA AQUI ----
       - name: Prepare staging directory
         run: |
+          # 1. Cria a pasta temporária de deploy
           mkdir _site
-          cp src/dashboard.html _site/index.html
           
-          # Dica: Se o dashboard.html carregar arquivos locais como:
-          # <link rel="stylesheet" href="css/style.css"> ou <script src="js/app.js">
-          # Descomente e ajuste as linhas abaixo para levar as pastas junto:
-          # cp -r src/css _site/
-          # cp -r src/js _site/
+          # 2. Copia TODO o conteúdo da sua pasta 'src' para dentro de '_site'
+          # Isso garante que subpastas como js/, css/, assets/ continuem existindo lá dentro
+          cp -r src/* _site/
+          
+          # 3. Transforma o dashboard.html no index.html principal na raiz do deploy
+          cp src/dashboard.html _site/index.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload da pasta temporária que criamos com o index.html correto
+          # Faz o upload da pasta estruturada com HTML, JS e CSS
           path: '_site'
           
       - name: Deploy to GitHub Pages
