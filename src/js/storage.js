@@ -180,6 +180,40 @@ const OdontoStorage = {
         });
     },
 
+    getAppointmentsByDentistAndDate(idDentista, data) {
+        const db = this.getDB();
+        return db.consultas
+            .filter(c => c.idDentista === Number(idDentista) && c.data === data)
+            .sort((a, b) => a.hora.localeCompare(b.hora));
+    },
+
+    getAgendaByDentistAndDate(idDentista, data) {
+        const db = this.getDB();
+        return db.agendas.find(a => a.idDentista === Number(idDentista) && a.data === data) || null;
+    },
+
+    getPatientNameById(idPaciente) {
+        const db = this.getDB();
+        const paciente = db.pacientes.find(p => p.idPaciente === Number(idPaciente));
+        return paciente ? paciente.nome : 'Paciente Desconhecido';
+    },
+
+    getAvailableSlots(idDentista, data) {
+        const agenda = this.getAgendaByDentistAndDate(idDentista, data);
+        if (!agenda) return [];
+
+        const bookedTimes = this.getAppointmentsByDentistAndDate(idDentista, data)
+            .filter(c => c.status !== 'Desmarcado')
+            .map(c => c.hora);
+
+        return agenda.horariosTodos.filter(h => !agenda.horariosBloqueados.includes(h) && !bookedTimes.includes(h));
+    },
+
+    isSlotAvailable(idDentista, data, hora) {
+        const availableSlots = this.getAvailableSlots(idDentista, data);
+        return availableSlots.includes(hora);
+    },
+
     addAppointment(appointment) {
         const db = this.getDB();
         appointment.idConsulta = db.consultas.length > 0 ? Math.max(...db.consultas.map(c => c.idConsulta)) + 1 : 1;
