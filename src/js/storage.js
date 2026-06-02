@@ -214,6 +214,47 @@ const OdontoStorage = {
         return availableSlots.includes(hora);
     },
 
+    getAppointmentsByDentistAndDateRange(idDentista, startDate, endDate) {
+        const db = this.getDB();
+        const start = new Date(startDate);
+        const end = new Date(endDate);
+        return db.consultas
+            .filter(c => c.idDentista === Number(idDentista))
+            .filter(c => {
+                const d = new Date(c.data);
+                return d >= start && d <= end;
+            })
+            .sort((a, b) => {
+                if (a.data === b.data) return a.hora.localeCompare(b.hora);
+                return a.data.localeCompare(b.data);
+            });
+    },
+
+    getAppointmentById(idConsulta) {
+        const db = this.getDB();
+        return db.consultas.find(c => c.idConsulta === Number(idConsulta)) || null;
+    },
+
+    blockScheduleSlot(idDentista, data, hora) {
+        const db = this.getDB();
+        const agenda = db.agendas.find(a => a.idDentista === Number(idDentista) && a.data === data);
+        if (!agenda) return false;
+        if (!agenda.horariosBloqueados.includes(hora)) {
+            agenda.horariosBloqueados.push(hora);
+            this.saveDB(db);
+        }
+        return true;
+    },
+
+    unblockScheduleSlot(idDentista, data, hora) {
+        const db = this.getDB();
+        const agenda = db.agendas.find(a => a.idDentista === Number(idDentista) && a.data === data);
+        if (!agenda) return false;
+        agenda.horariosBloqueados = agenda.horariosBloqueados.filter(h => h !== hora);
+        this.saveDB(db);
+        return true;
+    },
+
     addAppointment(appointment) {
         const db = this.getDB();
         appointment.idConsulta = db.consultas.length > 0 ? Math.max(...db.consultas.map(c => c.idConsulta)) + 1 : 1;
