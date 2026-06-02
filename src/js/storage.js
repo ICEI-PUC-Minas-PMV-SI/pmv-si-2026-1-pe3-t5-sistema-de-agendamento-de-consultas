@@ -7,7 +7,44 @@ function getTodayDateString() {
     return `${yyyy}-${mm}-${dd}`;
 }
 
+function getDateStringWithOffset(days) {
+    const base = new Date(getTodayDateString() + 'T00:00:00');
+    base.setDate(base.getDate() + days);
+    const yyyy = base.getFullYear();
+    const mm = String(base.getMonth() + 1).padStart(2, '0');
+    const dd = String(base.getDate()).padStart(2, '0');
+    return `${yyyy}-${mm}-${dd}`;
+}
+
+function buildDefaultAgenda(idDentista, data) {
+    const dentistSchedules = {
+        3: {
+            horariosTodos: ["08:00", "08:30", "09:00", "09:30", "10:00", "10:30", "11:00", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30"],
+            horariosBloqueados: ["12:00", "12:30"]
+        },
+        4: {
+            horariosTodos: ["09:00", "09:30", "10:00", "10:30", "11:00", "11:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00"],
+            horariosBloqueados: ["12:00", "12:30"]
+        }
+    };
+
+    const template = dentistSchedules[idDentista] || {
+        horariosTodos: ["08:00", "08:30", "09:00", "09:30", "10:00", "10:30", "11:00", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00"],
+        horariosBloqueados: ["12:00", "12:30"]
+    };
+
+    return {
+        idAgenda: null,
+        idDentista: idDentista,
+        data,
+        horariosTodos: template.horariosTodos,
+        horariosBloqueados: template.horariosBloqueados
+    };
+}
+
 const TODAY = getTodayDateString();
+const TOMORROW = getDateStringWithOffset(1);
+const AFTER_TOMORROW = getDateStringWithOffset(2);
 
 const INITIAL_DATABASE = {
     usuarios: [
@@ -55,7 +92,15 @@ const INITIAL_DATABASE = {
         { idConsulta: 19, idPaciente: 9, idDentista: 3, data: TODAY, hora: "18:00", status: "Confirmado", tipoConsulta: "Aparelho", observacoes: "Ajuste geral" },
         { idConsulta: 20, idPaciente: 10, idDentista: 4, data: TODAY, hora: "18:30", status: "Confirmado", tipoConsulta: "Restauração", observacoes: "Tratamento estético" },
         { idConsulta: 21, idPaciente: 5, idDentista: 4, data: TODAY, hora: "19:00", status: "Confirmado", tipoConsulta: "Canal", observacoes: "Limpeza do conduto" },
-        { idConsulta: 22, idPaciente: 6, idDentista: 3, data: TODAY, hora: "19:30", status: "Confirmado", tipoConsulta: "Limpeza", observacoes: "Aplicação de flúor" }
+        { idConsulta: 22, idPaciente: 6, idDentista: 3, data: TODAY, hora: "19:30", status: "Confirmado", tipoConsulta: "Limpeza", observacoes: "Aplicação de flúor" },
+        { idConsulta: 23, idPaciente: 8, idDentista: 3, data: TOMORROW, hora: "09:00", status: "Confirmado", tipoConsulta: "Avaliação", observacoes: "Primeira consulta com aparelho" },
+        { idConsulta: 24, idPaciente: 9, idDentista: 4, data: TOMORROW, hora: "10:30", status: "Confirmado", tipoConsulta: "Implante", observacoes: "Revisão de cicatrização" },
+        { idConsulta: 25, idPaciente: 10, idDentista: 3, data: AFTER_TOMORROW, hora: "08:30", status: "Confirmado", tipoConsulta: "Aparelho", observacoes: "Ajuste de arco" },
+        { idConsulta: 26, idPaciente: 5, idDentista: 4, data: AFTER_TOMORROW, hora: "14:00", status: "Confirmado", tipoConsulta: "Restauração", observacoes: "Reparo estético" },
+        { idConsulta: 27, idPaciente: 6, idDentista: 3, data: getDateStringWithOffset(3), hora: "09:30", status: "Confirmado", tipoConsulta: "Canal", observacoes: "Segunda fase do tratamento" },
+        { idConsulta: 28, idPaciente: 7, idDentista: 4, data: getDateStringWithOffset(4), hora: "11:00", status: "Confirmado", tipoConsulta: "Clareamento", observacoes: "Sessão de manutenção" },
+        { idConsulta: 29, idPaciente: 8, idDentista: 3, data: getDateStringWithOffset(5), hora: "15:00", status: "Confirmado", tipoConsulta: "Restauração", observacoes: "Revisão de amálgama" },
+        { idConsulta: 30, idPaciente: 10, idDentista: 4, data: getDateStringWithOffset(6), hora: "16:30", status: "Confirmado", tipoConsulta: "Implante", observacoes: "Avaliação pós-op" }
     ],
     agendas: [
         {
@@ -71,6 +116,34 @@ const INITIAL_DATABASE = {
             data: TODAY,
             horariosTodos: ["10:30", "11:00", "11:30", "12:00", "12:30", "14:30", "15:00", "16:30", "17:00", "18:30", "19:00"],
             horariosBloqueados: []
+        },
+        {
+            idAgenda: 3,
+            idDentista: 3,
+            data: TOMORROW,
+            horariosTodos: ["08:00", "08:30", "09:00", "09:30", "10:00", "10:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30"],
+            horariosBloqueados: ["12:00"]
+        },
+        {
+            idAgenda: 4,
+            idDentista: 4,
+            data: TOMORROW,
+            horariosTodos: ["09:00", "09:30", "10:00", "10:30", "11:00", "13:00", "13:30", "14:00", "14:30", "15:00"],
+            horariosBloqueados: ["11:30"]
+        },
+        {
+            idAgenda: 5,
+            idDentista: 3,
+            data: AFTER_TOMORROW,
+            horariosTodos: ["08:00", "08:30", "09:00", "09:30", "10:00", "10:30", "11:00", "13:00", "13:30", "14:00", "15:00", "15:30"],
+            horariosBloqueados: ["12:30"]
+        },
+        {
+            idAgenda: 6,
+            idDentista: 4,
+            data: AFTER_TOMORROW,
+            horariosTodos: ["09:00", "09:30", "10:00", "10:30", "11:30", "13:00", "13:30", "14:00", "14:30", "15:00"],
+            horariosBloqueados: ["12:00"]
         }
     ],
     historico: [
@@ -189,7 +262,7 @@ const OdontoStorage = {
 
     getAgendaByDentistAndDate(idDentista, data) {
         const db = this.getDB();
-        return db.agendas.find(a => a.idDentista === Number(idDentista) && a.data === data) || null;
+        return db.agendas.find(a => a.idDentista === Number(idDentista) && a.data === data) || buildDefaultAgenda(Number(idDentista), data);
     },
 
     getPatientNameById(idPaciente) {
