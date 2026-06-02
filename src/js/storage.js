@@ -34,7 +34,7 @@ const INITIAL_DATABASE = {
     consultas: [
         { idConsulta: 1, idPaciente: 8, idDentista: 3, data: TODAY, hora: "09:30", status: "Confirmado", tipoConsulta: "Limpeza", observacoes: "Limpeza periódica" },
         { idConsulta: 2, idPaciente: 9, idDentista: 3, data: TODAY, hora: "10:00", status: "Confirmado", tipoConsulta: "Canal", observacoes: "Tratamento de canal dente 14" },
-        { idConsulta: 3, idPaciente: 10, idDentista: 4, data: TODAY, hora: "10:30", status: "Confirmado", tipoConsulta: "Remoção de ciso", observacoes: "Exodontia dos ciso inferiores" },
+        { idConsulta: 3, idPaciente: 10, idDentista: 4, data: TODAY, hora: "10:30", status: "Confirmado", tipoConsulta: "Remoção de siso", observacoes: "Exodontia dos siso inferiores" },
 
         { idConsulta: 4, idPaciente: 5, idDentista: 3, data: TODAY, hora: "08:00", status: "Desmarcado", tipoConsulta: "Consulta Inicial", observacoes: "Paciente informou imprevisto de trabalho" },
         { idConsulta: 5, idPaciente: 6, idDentista: 4, data: TODAY, hora: "14:00", status: "Desmarcado", tipoConsulta: "Clareamento", observacoes: "Paciente precisou viajar" },
