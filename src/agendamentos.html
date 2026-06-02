@@ -34,30 +34,28 @@
                     </div>
                 </header>
 
-                <section class="agenda-filters-section">
-                    <h2 class="section-title">Configuração de agenda</h2>
-                    <div class="agenda-filters-grid">
-                        <div class="agenda-filter-card">
-                            <label>Visão</label>
-                            <div style="display:flex; gap:8px;">
-                                <button id="view-day" class="btn btn-primary" type="button">Dia</button>
-                                <button id="view-week" class="btn" type="button">Semana</button>
-                            </div>
+                <section class="agenda-controls-section">
+                    <div class="agenda-controls-top">
+                        <div>
+                            <div class="agenda-page-title">Agenda</div>
+                            <div class="agenda-page-subtitle">Visualize e gerencie os horários dos dentistas.</div>
                         </div>
-                        <div class="agenda-filter-card" style="display:flex; align-items:flex-end; gap:8px;">
-                            <button id="prev-period" class="btn">Anterior</button>
-                            <button id="next-period" class="btn">Próximo</button>
+                        <button id="new-appointment-button" class="btn btn-primary" type="button">+ Novo Agendamento</button>
+                    </div>
+                    <div class="agenda-controls-row">
+                        <div class="view-toggle-group">
+                            <button id="view-day" class="btn btn-primary" type="button">Dia</button>
+                            <button id="view-week" class="btn" type="button">Semana</button>
                         </div>
-                        <div class="agenda-filter-card">
+                        <div class="date-navigation-group">
+                            <button id="prev-period" class="btn icon-btn" type="button">&lt;</button>
+                            <div id="agenda-date-display" class="agenda-date-display"></div>
+                            <button id="next-period" class="btn icon-btn" type="button">&gt;</button>
+                            <input type="date" id="agenda-date" class="agenda-date-input">
+                        </div>
+                        <div class="dentist-select-group">
                             <label for="dentist-select">Dentista</label>
                             <select id="dentist-select"></select>
-                        </div>
-                        <div class="agenda-filter-card">
-                            <label for="agenda-date">Data</label>
-                            <input type="date" id="agenda-date">
-                        </div>
-                        <div class="agenda-filter-card agenda-actions-card">
-                            <button id="refresh-agenda" class="btn btn-primary">Carregar agenda</button>
                         </div>
                     </div>
                 </section>
@@ -79,42 +77,6 @@
                     </div>
                 </section>
 
-                <section class="appointment-booking-section">
-                    <h2 class="section-title">Agendar nova consulta</h2>
-                    <form id="book-appointment-form" class="booking-form">
-                        <div class="form-grid">
-                            <div class="form-field">
-                                <label for="patient-select">Paciente</label>
-                                <select id="patient-select"></select>
-                            </div>
-                            <div class="form-field">
-                                <label for="consult-type">Procedimento</label>
-                                <select id="consult-type">
-                                    <option value="Limpeza">Limpeza</option>
-                                    <option value="Avaliação">Avaliação</option>
-                                    <option value="Canal">Canal</option>
-                                    <option value="Restauração">Restauração</option>
-                                    <option value="Implante">Implante</option>
-                                    <option value="Aparelho">Aparelho</option>
-                                    <option value="Clareamento">Clareamento</option>
-                                    <option value="Consulta Inicial">Consulta Inicial</option>
-                                </select>
-                            </div>
-                            <div class="form-field">
-                                <label for="slot-select">Horário</label>
-                                <select id="slot-select"></select>
-                            </div>
-                            <div class="form-field form-field-full">
-                                <label for="observations-input">Observações</label>
-                                <textarea id="observations-input" rows="2" placeholder="Anotações rápidas sobre a consulta"></textarea>
-                            </div>
-                        </div>
-                        <div class="form-actions">
-                            <button type="submit" class="btn btn-primary">Agendar consulta</button>
-                            <span id="agenda-feedback" class="agenda-feedback"></span>
-                        </div>
-                    </form>
-                </section>
 
                 <section class="agenda-table-section">
                     <h2 class="section-title">Horários do dia</h2>
@@ -138,22 +100,85 @@
         </main>
     </div>
 
+    <div id="booking-modal" class="appointment-modal" style="display:none;">
+        <div class="appointment-modal-backdrop"></div>
+        <div class="appointment-modal-content">
+            <h3>Novo Agendamento</h3>
+            <form id="book-appointment-form" class="booking-form">
+                <div class="form-grid">
+                    <div class="form-field">
+                        <label for="patient-select">Paciente</label>
+                        <select id="patient-select"></select>
+                    </div>
+                    <div class="form-field">
+                        <label for="consult-type">Procedimento</label>
+                        <select id="consult-type">
+                            <option value="Limpeza">Limpeza</option>
+                            <option value="Avaliação">Avaliação</option>
+                            <option value="Canal">Canal</option>
+                            <option value="Restauração">Restauração</option>
+                            <option value="Implante">Implante</option>
+                            <option value="Aparelho">Aparelho</option>
+                            <option value="Clareamento">Clareamento</option>
+                            <option value="Consulta Inicial">Consulta Inicial</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="slot-select">Horário</label>
+                        <select id="slot-select"></select>
+                    </div>
+                    <div class="form-field form-field-full">
+                        <label for="observations-input">Observações</label>
+                        <textarea id="observations-input" rows="2" placeholder="Anotações rápidas sobre a consulta"></textarea>
+                    </div>
+                </div>
+                <div class="form-actions modal-actions">
+                    <button type="button" id="book-cancel" class="btn">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                    <span id="agenda-feedback" class="agenda-feedback"></span>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <script src="js/storage.js"></script>
     <script src="components/sidebar/sidebar.js"></script>
     <script src="js/agenda.js"></script>
+
+    <div id="appointment-modal" class="appointment-modal" style="display:none;">
+        <div class="appointment-modal-backdrop"></div>
+        <div class="appointment-modal-content">
+            <h3 id="modal-title">Detalhes da Consulta</h3>
+            <div id="modal-body"></div>
+            <div style="display:flex; gap:8px; justify-content:flex-end; margin-top:12px;">
+                <button id="modal-reschedule" class="btn btn-primary">Remarcar</button>
+                <button id="modal-cancel" class="btn">Cancelar</button>
+                <button id="modal-close" class="btn">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="reschedule-modal" class="appointment-modal" style="display:none;">
+        <div class="appointment-modal-backdrop"></div>
+        <div class="appointment-modal-content">
+            <h3>Remarcar Consulta</h3>
+            <div id="reschedule-body">
+                <p id="reschedule-info"></p>
+                <label class="modal-field">
+                    Nova data
+                    <input id="reschedule-date" type="date">
+                </label>
+                <label class="modal-field">
+                    Novo horário
+                    <select id="reschedule-slot"></select>
+                </label>
+            </div>
+            <div style="display:flex; gap:8px; justify-content:flex-end; margin-top:12px;">
+                <button id="reschedule-save" class="btn btn-primary">Salvar</button>
+                <button id="reschedule-close" class="btn">Cancelar</button>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
-
-<div id="appointment-modal" class="appointment-modal" style="display:none;">
-    <div class="appointment-modal-backdrop"></div>
-    <div class="appointment-modal-content">
-        <h3 id="modal-title">Detalhes da Consulta</h3>
-        <div id="modal-body"></div>
-        <div style="display:flex; gap:8px; justify-content:flex-end; margin-top:12px;">
-            <button id="modal-reschedule" class="btn btn-primary">Remarcar</button>
-            <button id="modal-cancel" class="btn">Cancelar</button>
-            <button id="modal-close" class="btn">Fechar</button>
-        </div>
-    </div>
-</div>
