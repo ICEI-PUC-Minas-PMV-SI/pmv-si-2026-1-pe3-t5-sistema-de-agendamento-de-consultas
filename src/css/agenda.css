@@ -5,7 +5,7 @@
     margin-top: 8px;
 }
 
-.agenda-filters-section,
+.agenda-controls-section,
 .appointment-booking-section,
 .agenda-table-section,
 .agenda-summary-section {
@@ -14,11 +14,103 @@
     gap: 24px;
 }
 
-.agenda-filters-grid,
-.form-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(220px, 1fr));
+.agenda-controls-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     gap: 20px;
+}
+
+.agenda-page-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--bg-dark-navy);
+}
+
+.agenda-page-subtitle {
+    color: #475569;
+    font-size: 14px;
+}
+
+.agenda-controls-row {
+    display: grid;
+    grid-template-columns: minmax(180px, auto) minmax(320px, 1fr) minmax(220px, 280px);
+    gap: 16px;
+    align-items: center;
+}
+
+.view-toggle-group,
+.date-navigation-group {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.date-navigation-group {
+    position: relative;
+}
+
+.agenda-date-display {
+    padding: 14px 22px;
+    background-color: #F8FAFC;
+    border: 1px solid #CBD5E1;
+    border-radius: 16px;
+    min-width: 260px;
+    text-align: center;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.agenda-date-input {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+    pointer-events: none;
+}
+
+.icon-btn {
+    min-width: 48px;
+    padding: 14px 16px;
+}
+
+.dentist-select-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.dentist-select-group select {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #CBD5E1;
+    border-radius: 16px;
+    background-color: #FFFFFF;
+    color: #0F172A;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.agenda-date-group .agenda-date-controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.agenda-date-group .agenda-date-controls input {
+    flex: 1;
+    min-width: 240px;
+    width: 100%;
+}
+
+.agenda-date-group .agenda-date-controls .btn {
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+.agenda-date-group .agenda-date-controls input::-webkit-calendar-picker-indicator {
+    cursor: pointer;
 }
 
 .agenda-filter-card,
@@ -53,6 +145,27 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
+}
+
+.agenda-date-group .agenda-date-controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.agenda-date-group .agenda-date-controls input {
+    flex: 1;
+    min-width: 240px;
+    width: 100%;
+}
+
+.agenda-date-group .agenda-date-controls .btn {
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+.agenda-date-group .agenda-date-controls input::-webkit-calendar-picker-indicator {
+    cursor: pointer;
 }
 
 .btn {
@@ -145,6 +258,66 @@
     padding: 16px 20px;
 }
 
+.appointment-modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.appointment-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.55);
+}
+
+.appointment-modal-content {
+    position: relative;
+    width: min(920px, calc(100% - 40px));
+    background: #FFFFFF;
+    border-radius: 24px;
+    padding: 32px;
+    z-index: 10;
+    box-shadow: 0 24px 60px rgba(15, 23, 42, 0.16);
+}
+
+.appointment-modal-content h3 {
+    margin: 0 0 20px;
+    font-size: 26px;
+    color: #0F172A;
+}
+
+.modal-field {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.modal-field input,
+.modal-field select,
+.modal-field textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #CBD5E1;
+    border-radius: 16px;
+    background-color: #FFFFFF;
+    font-size: 14px;
+    color: #0F172A;
+    box-sizing: border-box;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    align-items: center;
+    margin-top: 18px;
+}
+
 .status-badge.bloqueado {
     background-color: #F8D7DA;
     color: #842029;
@@ -171,6 +344,35 @@
     .dashboard-card-container {
         padding: 24px;
     }
+}
+
+.week-cell-livre {
+    background-color: #eff8ff;
+    color: #0c4a6e;
+}
+
+.week-cell-bloqueado {
+    background-color: #f8d7da;
+    color: #842029;
+}
+
+.week-cell-confirmado {
+    background-color: #d1fae5;
+    color: #166534;
+}
+
+.week-cell-pendente {
+    background-color: #fff7cd;
+    color: #713f12;
+}
+
+.week-cell-desmarcado {
+    background-color: #e2e8f0;
+    color: #334155;
+}
+
+.week-cell-div {
+    white-space: normal;
 }
 
 .appointment-modal {
@@ -206,3 +408,22 @@
 }
 
 .appointment-modal-content p { margin: 6px 0; }
+
+.modal-field {
+    display: block;
+    margin-bottom: 16px;
+    font-size: 13px;
+    color: #334155;
+}
+
+.modal-field input,
+.modal-field select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #CBD5E1;
+    border-radius: 12px;
+    margin-top: 8px;
+    background: #F8FAFC;
+    font-size: 14px;
+    color: #0F172A;
+}
