@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGACO - Agenda de Consultas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="components/sidebar/sidebar.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/agenda.css">
+</head>
+
+<body>
+    <div class="app-layout">
+        <div id="sidebar-container"></div>
+
+        <main class="dashboard-wrapper">
+            <div class="dashboard-card-container">
+                <header class="dashboard-header">
+                    <div>
+                        <h1 class="dashboard-title">Agenda de Consultas</h1>
+                        <p class="section-subtitle">Gerencie horários, pacientes e disponibilidade de dentistas.</p>
+                    </div>
+                    <div class="header-controls">
+                        <div class="user-profile">
+                            <span class="user-badge" id="logged-user">Administrador: Pedro Campos</span>
+                        </div>
+                    </div>
+                </header>
+
+                <section class="agenda-filters-section">
+                    <h2 class="section-title">Configuração de agenda</h2>
+                    <div class="agenda-filters-grid">
+                        <div class="agenda-filter-card">
+                            <label>Visão</label>
+                            <div style="display:flex; gap:8px;">
+                                <button id="view-day" class="btn btn-primary" type="button">Dia</button>
+                                <button id="view-week" class="btn" type="button">Semana</button>
+                            </div>
+                        </div>
+                        <div class="agenda-filter-card" style="display:flex; align-items:flex-end; gap:8px;">
+                            <button id="prev-period" class="btn">Anterior</button>
+                            <button id="next-period" class="btn">Próximo</button>
+                        </div>
+                        <div class="agenda-filter-card">
+                            <label for="dentist-select">Dentista</label>
+                            <select id="dentist-select"></select>
+                        </div>
+                        <div class="agenda-filter-card">
+                            <label for="agenda-date">Data</label>
+                            <input type="date" id="agenda-date">
+                        </div>
+                        <div class="agenda-filter-card agenda-actions-card">
+                            <button id="refresh-agenda" class="btn btn-primary">Carregar agenda</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="agenda-summary-section">
+                    <div class="card-grid">
+                        <div class="agenda-card">
+                            <div class="agenda-card-title">Consultas no dia</div>
+                            <div class="agenda-card-value" id="agenda-total">0</div>
+                        </div>
+                        <div class="agenda-card">
+                            <div class="agenda-card-title">Horários livres</div>
+                            <div class="agenda-card-value" id="agenda-free">0</div>
+                        </div>
+                        <div class="agenda-card">
+                            <div class="agenda-card-title">Horários bloqueados</div>
+                            <div class="agenda-card-value" id="agenda-blocked">0</div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="appointment-booking-section">
+                    <h2 class="section-title">Agendar nova consulta</h2>
+                    <form id="book-appointment-form" class="booking-form">
+                        <div class="form-grid">
+                            <div class="form-field">
+                                <label for="patient-select">Paciente</label>
+                                <select id="patient-select"></select>
+                            </div>
+                            <div class="form-field">
+                                <label for="consult-type">Procedimento</label>
+                                <select id="consult-type">
+                                    <option value="Limpeza">Limpeza</option>
+                                    <option value="Avaliação">Avaliação</option>
+                                    <option value="Canal">Canal</option>
+                                    <option value="Restauração">Restauração</option>
+                                    <option value="Implante">Implante</option>
+                                    <option value="Aparelho">Aparelho</option>
+                                    <option value="Clareamento">Clareamento</option>
+                                    <option value="Consulta Inicial">Consulta Inicial</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label for="slot-select">Horário</label>
+                                <select id="slot-select"></select>
+                            </div>
+                            <div class="form-field form-field-full">
+                                <label for="observations-input">Observações</label>
+                                <textarea id="observations-input" rows="2" placeholder="Anotações rápidas sobre a consulta"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Agendar consulta</button>
+                            <span id="agenda-feedback" class="agenda-feedback"></span>
+                        </div>
+                    </form>
+                </section>
+
+                <section class="agenda-table-section">
+                    <h2 class="section-title">Horários do dia</h2>
+                    <div class="table-container">
+                        <table class="appointments-table" id="slots-table">
+                            <thead>
+                                <tr>
+                                    <th>Horário</th>
+                                    <th>Status</th>
+                                    <th>Paciente</th>
+                                    <th>Procedimento</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody id="slots-tbody"></tbody>
+                        </table>
+                        <div id="week-container" style="display:none; margin-top:16px;"></div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/storage.js"></script>
+    <script src="components/sidebar/sidebar.js"></script>
+    <script src="js/agenda.js"></script>
+</body>
+
+</html>
+
+<div id="appointment-modal" class="appointment-modal" style="display:none;">
+    <div class="appointment-modal-backdrop"></div>
+    <div class="appointment-modal-content">
+        <h3 id="modal-title">Detalhes da Consulta</h3>
+        <div id="modal-body"></div>
+        <div style="display:flex; gap:8px; justify-content:flex-end; margin-top:12px;">
+            <button id="modal-reschedule" class="btn btn-primary">Remarcar</button>
+            <button id="modal-cancel" class="btn">Cancelar</button>
+            <button id="modal-close" class="btn">Fechar</button>
+        </div>
+    </div>
+</div>
