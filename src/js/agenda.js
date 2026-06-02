@@ -1,19 +1,27 @@
+let currentRescheduleAppointmentId = null;
+
 document.addEventListener('DOMContentLoaded', () => {
     OdontoStorage.init();
+    window._odonto_view = 'day';
     bindAgendaEvents();
     populateDentistSelect();
     populatePatientSelect();
     setDefaultDate();
-    renderAgenda();
+    switchView('day');
 });
 
 function bindAgendaEvents() {
     document.getElementById('dentist-select').addEventListener('change', renderAgenda);
     document.getElementById('agenda-date').addEventListener('change', renderAgenda);
-    document.getElementById('refresh-agenda').addEventListener('click', (e) => {
-        e.preventDefault();
-        renderAgenda();
+    document.getElementById('agenda-date-display').addEventListener('click', () => {
+        const dateInput = document.getElementById('agenda-date');
+        dateInput.focus();
+        if (typeof dateInput.showPicker === 'function') {
+            dateInput.showPicker();
+        }
     });
+
+    document.getElementById('new-appointment-button').addEventListener('click', openBookingModal);
 
     const viewDay = document.getElementById('view-day');
     const viewWeek = document.getElementById('view-week');
@@ -27,15 +35,55 @@ function bindAgendaEvents() {
         event.preventDefault();
         handleBookAppointment();
     });
+
+    document.getElementById('book-cancel').addEventListener('click', closeBookingModal);
+    document.getElementById('reschedule-close').addEventListener('click', closeRescheduleModal);
+    document.getElementById('reschedule-save').addEventListener('click', saveReschedule);
+    document.getElementById('reschedule-date').addEventListener('change', updateRescheduleSlots);
+}
+
+function getAgendaDateInput() {
+    return document.getElementById('agenda-date');
+}
+
+function formatIsoDate(date) {
+    return date.toISOString().slice(0, 10);
+}
+
+function parseAgendaDate() {
+    const dateInput = getAgendaDateInput();
+    const value = dateInput.value;
+    if (!value) return new Date();
+    const parsed = new Date(`${value}T00:00:00`);
+    return isNaN(parsed.getTime()) ? new Date() : parsed;
+}
+
+function setAgendaDate(date) {
+    const dateInput = getAgendaDateInput();
+    dateInput.value = formatIsoDate(date);
 }
 
 function setDefaultDate() {
-    const todayInput = document.getElementById('agenda-date');
     const today = new Date();
-    const yyyy = today.getFullYear();
-    const mm = String(today.getMonth() + 1).padStart(2, '0');
-    const dd = String(today.getDate()).padStart(2, '0');
-    todayInput.value = `${yyyy}-${mm}-${dd}`;
+    setAgendaDate(today);
+    updateDateDisplay(getAgendaDateInput().value);
+}
+
+function formatDateLong(isoDate) {
+    if (!isoDate) return '';
+    const date = new Date(isoDate + 'T00:00:00');
+    return date.toLocaleDateString('pt-BR', {
+        weekday: 'long',
+        day: '2-digit',
+        month: 'long',
+        year: 'numeric'
+    });
+}
+
+function updateDateDisplay(isoDate) {
+    const display = document.getElementById('agenda-date-display');
+    if (!display) return;
+    display.textContent = formatDateLong(isoDate || getSelectedDate());
 }
 
 function populateDentistSelect() {
@@ -77,6 +125,8 @@ function renderAgenda() {
     const date = getSelectedDate();
     const currentView = window._odonto_view || 'day';
 
+    updateDateDisplay(date);
+
     if (currentView === 'week') {
         renderWeekView(dentistId, date);
         return;
@@ -110,17 +160,12 @@ function switchView(view) {
 }
 
 function changePeriod(delta) {
-    const dateInput = document.getElementById('agenda-date');
-    const current = new Date(dateInput.value);
-    if (window._odonto_view === 'week') {
-        current.setDate(current.getDate() + delta * 7);
-    } else {
-        current.setDate(current.getDate() + delta);
-    }
-    const yyyy = current.getFullYear();
-    const mm = String(current.getMonth() + 1).padStart(2, '0');
-    const dd = String(current.getDate()).padStart(2, '0');
-    dateInput.value = `${yyyy}-${mm}-${dd}`;
+    const currentView = window._odonto_view || 'day';
+    const current = parseAgendaDate();
+    const step = currentView === 'week' ? delta * 7 : delta;
+    current.setDate(current.getDate() + step);
+    setAgendaDate(current);
+    updateDateDisplay(getAgendaDateInput().value);
     renderAgenda();
 }
 
@@ -143,7 +188,14 @@ function renderWeekView(dentistId, date) {
     const weekContainer = document.getElementById('week-container');
     weekContainer.innerHTML = '';
     const appointments = OdontoStorage.getAppointmentsByDentistAndDateRange(dentistId, days[0], days[6]);
-    const agenda = OdontoStorage.getAgendaByDentistAndDate(dentistId, days[0]) || { horariosTodos: [], horariosBloqueados: [] };
+    const agendas = days.map(d => OdontoStorage.getAgendaByDentistAndDate(dentistId, d));
+    const horariosSet = new Set();
+    agendas.forEach(agendaDay => {
+        if (agendaDay && Array.isArray(agendaDay.horariosTodos)) {
+            agendaDay.horariosTodos.forEach(h => horariosSet.add(h));
+        }
+    });
+    const horarios = Array.from(horariosSet).sort((a, b) => a.localeCompare(b));
 
     const table = document.createElement('table');
     table.className = 'appointments-table';
@@ -159,28 +211,31 @@ function renderWeekView(dentistId, date) {
     table.appendChild(thead);
 
     const tbody = document.createElement('tbody');
-    const horarios = agenda.horariosTodos;
     horarios.forEach(hora => {
         const row = document.createElement('tr');
         const tdHora = document.createElement('td');
         tdHora.textContent = hora;
         row.appendChild(tdHora);
 
-        days.forEach(d => {
+        days.forEach((d, index) => {
             const cell = document.createElement('td');
             const consulta = appointments.find(a => a.data === d && a.hora === hora);
+            const agendaDay = agendas[index] || { horariosBloqueados: [] };
             if (consulta) {
                 const p = document.createElement('div');
                 p.textContent = `${consulta.hora} - ${OdontoStorage.getPatientNameById(consulta.idPaciente)}`;
                 p.style.cursor = 'pointer';
                 p.addEventListener('click', () => openAppointmentModal(consulta.idConsulta));
                 cell.appendChild(p);
-            } else if (agenda.horariosBloqueados.includes(hora)) {
+                cell.classList.add(`week-cell-${consulta.status.toLowerCase()}`);
+            } else if (agendaDay.horariosBloqueados.includes(hora)) {
                 const b = document.createElement('div');
                 b.textContent = 'Bloqueado';
                 cell.appendChild(b);
+                cell.classList.add('week-cell-bloqueado');
             } else {
                 cell.textContent = 'Livre';
+                cell.classList.add('week-cell-livre');
             }
             row.appendChild(cell);
         });
@@ -284,7 +339,7 @@ function renderSlotsTable(dentistId, date, appointments, availableSlots, agenda)
             const btnRes = document.createElement('button');
             btnRes.className = 'btn';
             btnRes.textContent = 'Remarcar';
-            btnRes.addEventListener('click', () => rescheduleAppointment(consulta.idConsulta));
+            btnRes.addEventListener('click', () => openRescheduleModal(consulta.idConsulta));
 
             const btnCancel = document.createElement('button');
             btnCancel.className = 'btn';
@@ -343,6 +398,7 @@ function handleBookAppointment() {
 
     OdontoStorage.addAppointment(appointment);
     showFeedback('Consulta agendada com sucesso!', false);
+    closeBookingModal();
     renderAgenda();
 }
 
@@ -354,6 +410,20 @@ function showFeedback(message, isError) {
         feedback.textContent = '';
         feedback.className = 'agenda-feedback';
     }, 3000);
+}
+
+function openBookingModal() {
+    renderAgenda();
+    const modal = document.getElementById('booking-modal');
+    if (!modal) return;
+    modal.style.display = 'flex';
+    document.getElementById('patient-select').focus();
+}
+
+function closeBookingModal() {
+    const modal = document.getElementById('booking-modal');
+    if (!modal) return;
+    modal.style.display = 'none';
 }
 
 function openAppointmentModal(idConsulta) {
@@ -376,7 +446,7 @@ function openAppointmentModal(idConsulta) {
 
     document.getElementById('modal-close').onclick = closeAppointmentModal;
     document.getElementById('modal-cancel').onclick = () => { cancelAppointment(idConsulta); closeAppointmentModal(); };
-    document.getElementById('modal-reschedule').onclick = () => { closeAppointmentModal(); rescheduleAppointment(idConsulta); };
+    document.getElementById('modal-reschedule').onclick = () => { closeAppointmentModal(); openRescheduleModal(idConsulta); };
 }
 
 function closeAppointmentModal() {
@@ -390,18 +460,83 @@ function cancelAppointment(idConsulta) {
     renderAgenda();
 }
 
-function rescheduleAppointment(idConsulta) {
+function openRescheduleModal(idConsulta) {
     const appt = OdontoStorage.getAppointmentById(idConsulta);
     if (!appt) return;
-    const newDate = prompt('Informe a nova data (YYYY-MM-DD):', appt.data);
-    if (!newDate) return;
-    const newTime = prompt('Informe o novo horário (HH:MM):', appt.hora);
-    if (!newTime) return;
-    if (!OdontoStorage.isSlotAvailable(appt.idDentista, newDate, newTime)) {
+    currentRescheduleAppointmentId = idConsulta;
+    const modal = document.getElementById('reschedule-modal');
+    const info = document.getElementById('reschedule-info');
+    const dateField = document.getElementById('reschedule-date');
+    const slotSelect = document.getElementById('reschedule-slot');
+
+    info.textContent = `Paciente: ${OdontoStorage.getPatientNameById(appt.idPaciente)} | Horário atual: ${appt.data} ${appt.hora}`;
+    dateField.value = appt.data;
+    updateRescheduleSlots();
+
+    modal.style.display = 'flex';
+}
+
+function updateRescheduleSlots() {
+    const apptId = currentRescheduleAppointmentId;
+    if (!apptId) return;
+    const appt = OdontoStorage.getAppointmentById(apptId);
+    if (!appt) return;
+
+    const selectedDate = document.getElementById('reschedule-date').value;
+    const slotSelect = document.getElementById('reschedule-slot');
+    slotSelect.innerHTML = '';
+
+    const availableSlots = OdontoStorage.getAvailableSlots(appt.idDentista, selectedDate);
+    const currentSlot = appt.hora;
+
+    if (!availableSlots.includes(currentSlot)) {
+        availableSlots.unshift(currentSlot);
+    }
+
+    if (availableSlots.length === 0) {
+        const option = document.createElement('option');
+        option.value = '';
+        option.textContent = 'Nenhum horário disponível';
+        slotSelect.appendChild(option);
+        slotSelect.disabled = true;
+        return;
+    }
+    slotSelect.disabled = false;
+    availableSlots.forEach(slot => {
+        const option = document.createElement('option');
+        option.value = slot;
+        option.textContent = slot;
+        if (slot === appt.hora) option.selected = true;
+        slotSelect.appendChild(option);
+    });
+}
+
+function closeRescheduleModal() {
+    const modal = document.getElementById('reschedule-modal');
+    modal.style.display = 'none';
+    currentRescheduleAppointmentId = null;
+}
+
+function saveReschedule() {
+    const apptId = currentRescheduleAppointmentId;
+    if (!apptId) return;
+    const appt = OdontoStorage.getAppointmentById(apptId);
+    if (!appt) return;
+
+    const newDate = document.getElementById('reschedule-date').value;
+    const newTime = document.getElementById('reschedule-slot').value;
+    if (!newDate || !newTime) {
+        alert('Selecione data e horário.');
+        return;
+    }
+
+    if (!OdontoStorage.isSlotAvailable(appt.idDentista, newDate, newTime) && !(newDate === appt.data && newTime === appt.hora)) {
         alert('Horário indisponível. Escolha outro.');
         return;
     }
-    OdontoStorage.updateAppointment(idConsulta, { data: newDate, hora: newTime, status: 'Pendente' });
+
+    OdontoStorage.updateAppointment(apptId, { data: newDate, hora: newTime, status: 'Pendente' });
     showFeedback('Consulta remarcada com sucesso.', false);
+    closeRescheduleModal();
     renderAgenda();
 }
