@@ -1,9 +1,4 @@
-/* =============================================================
-   perfil.css — Tela de Perfil OdontoFlow
-   Complementa dashboard.css e sidebar.css
-   ============================================================= */
 
-/* ---------- Layout Principal ---------- */
 .perfil-grid {
     display: grid;
     grid-template-columns: 260px 1fr 280px;
@@ -11,7 +6,6 @@
     align-items: start;
 }
 
-/* ---------- Cards de Seção ---------- */
 .perfil-avatar-card,
 .perfil-section-card {
     background-color: #FFFFFF;
@@ -24,7 +18,6 @@
     gap: 20px;
 }
 
-/* ---------- Avatar ---------- */
 .perfil-avatar-wrapper {
     position: relative;
     width: 100px;
@@ -179,7 +172,6 @@
     text-align: right;
 }
 
-/* ---------- Botões de Ação do Info ---------- */
 .perfil-info-actions {
     display: flex;
     flex-wrap: wrap;
@@ -187,7 +179,6 @@
     margin-top: 4px;
 }
 
-/* ---------- Título de Seção ---------- */
 .perfil-section-title {
     font-size: 20px;
     font-weight: 800;
@@ -196,7 +187,6 @@
     letter-spacing: -0.3px;
 }
 
-/* ---------- Formulário de Senha ---------- */
 .perfil-form {
     display: flex;
     flex-direction: column;
@@ -210,7 +200,6 @@
     margin-top: 4px;
 }
 
-/* ---------- Preferências ---------- */
 .perfil-preferences {
     display: flex;
     flex-direction: column;
@@ -263,7 +252,6 @@
     color: #0F172A;
 }
 
-/* Toggle Switch */
 .pref-toggle {
     width: 44px;
     height: 24px;
@@ -300,14 +288,12 @@
     transform: translateX(20px);
 }
 
-/* ---------- Card de Sair ---------- */
 .perfil-sair-card {
     margin-top: 16px;
     display: flex;
     justify-content: flex-end;
 }
 
-/* ---------- Botões ---------- */
 .btn {
     border: none;
     border-radius: 12px;
@@ -375,7 +361,6 @@
     box-shadow: 0 8px 20px rgba(185, 28, 28, 0.2);
 }
 
-/* ---------- Feedback ---------- */
 .perfil-feedback {
     font-size: 13px;
     font-weight: 700;
@@ -391,7 +376,6 @@
     color: #B91C1C;
 }
 
-/* ---------- Modal de Saída ---------- */
 .perfil-modal {
     position: fixed;
     inset: 0;
@@ -437,7 +421,6 @@
     justify-content: center;
 }
 
-/* ---------- Responsivo ---------- */
 @media (max-width: 1100px) {
     .perfil-grid {
         grid-template-columns: 1fr 1fr;
