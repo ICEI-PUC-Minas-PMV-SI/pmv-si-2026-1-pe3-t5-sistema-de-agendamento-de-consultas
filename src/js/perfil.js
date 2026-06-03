@@ -1,16 +1,9 @@
-/**
- * perfil.js — Tela de Perfil OdontoFlow
- * Depende de: storage.js (OdontoStorage), sidebar.js
- */
 
 document.addEventListener('DOMContentLoaded', () => {
     OdontoStorage.init();
     initPerfil();
 });
 
-/* ============================================================
-   INIT
-   ============================================================ */
 function initPerfil() {
     loadUserData();
     loadPreferences();
@@ -21,19 +14,17 @@ function initPerfil() {
     bindEyeButtons();
 }
 
-/* ============================================================
-   CARREGAR DADOS DO USUÁRIO
-   ============================================================ */
+
 function loadUserData() {
     const user = OdontoStorage.getCurrentUser();
     if (!user) return;
 
-    // Preenche campos
+   
     setInputValue('input-nome', user.nome || '');
     setInputValue('input-email', user.email || '');
     setInputValue('input-perfil', user.perfil || '');
 
-    // Iniciais do avatar
+   
     const initialsEl = document.getElementById('perfil-avatar-initials');
     if (initialsEl && user.nome) {
         const parts = user.nome.trim().split(' ');
@@ -43,7 +34,7 @@ function loadUserData() {
         initialsEl.textContent = initials;
     }
 
-    // Badge do header
+   
     const badge = document.getElementById('logged-user');
     if (badge && user.nome) {
         badge.textContent = `${user.perfil || 'Usuário'}: ${user.nome}`;
@@ -55,9 +46,7 @@ function setInputValue(id, value) {
     if (el) el.value = value;
 }
 
-/* ============================================================
-   EDITAR INFORMAÇÕES BÁSICAS
-   ============================================================ */
+
 function bindInfoEditEvents() {
     const btnEdit   = document.getElementById('btn-edit-info');
     const btnSave   = document.getElementById('btn-save-info');
@@ -119,7 +108,7 @@ function saveUserInfo() {
         return;
     }
 
-    // Atualiza no storage
+  
     const user = OdontoStorage.getCurrentUser();
     if (user) {
         const db = OdontoStorage.getDB();
@@ -131,7 +120,7 @@ function saveUserInfo() {
         }
     }
 
-    // Atualiza avatar
+   
     const initialsEl = document.getElementById('perfil-avatar-initials');
     if (initialsEl && nome) {
         const parts = nome.split(' ');
@@ -141,7 +130,7 @@ function saveUserInfo() {
         initialsEl.textContent = initials;
     }
 
-    // Atualiza badge
+  
     const badge = document.getElementById('logged-user');
     if (badge) {
         const perfil = document.getElementById('input-perfil')?.value || 'Usuário';
@@ -152,9 +141,7 @@ function saveUserInfo() {
     exitEditMode(true);
 }
 
-/* ============================================================
-   ALTERAR SENHA
-   ============================================================ */
+
 function bindPasswordEvents() {
     const form = document.getElementById('form-senha');
     if (!form) return;
@@ -164,7 +151,7 @@ function bindPasswordEvents() {
         handleSavePassword();
     });
 
-    // Indicador de força da senha
+  
     const senhaNovaInput = document.getElementById('senha-nova');
     if (senhaNovaInput) {
         senhaNovaInput.addEventListener('input', () => {
@@ -183,7 +170,7 @@ function handleSavePassword() {
         return;
     }
 
-    // Verifica senha atual
+
     const user = OdontoStorage.getCurrentUser();
     if (user && user.senhaHash !== senhaAtual) {
         showFeedback('senha-feedback', 'Senha atual incorreta.', true);
@@ -200,7 +187,7 @@ function handleSavePassword() {
         return;
     }
 
-    // Salva no storage
+  
     if (user) {
         const db = OdontoStorage.getDB();
         const idx = db.usuarios.findIndex(u => u.idUsuario === user.idUsuario);
@@ -210,7 +197,7 @@ function handleSavePassword() {
         }
     }
 
-    // Limpa campos
+
     ['senha-atual', 'senha-nova', 'senha-confirmar'].forEach(id => {
         const el = document.getElementById(id);
         if (el) el.value = '';
@@ -258,9 +245,7 @@ function updatePasswordStrength(senha) {
     labelEl.style.color          = level.textColor;
 }
 
-/* ============================================================
-   BOTÕES DE VER/OCULTAR SENHA
-   ============================================================ */
+
 function bindEyeButtons() {
     document.querySelectorAll('.perfil-eye-btn').forEach(btn => {
         btn.addEventListener('click', () => {
@@ -273,9 +258,7 @@ function bindEyeButtons() {
     });
 }
 
-/* ============================================================
-   PREFERÊNCIAS (Toggle)
-   ============================================================ */
+/
 
 const PREF_STORAGE_KEY = 'odonto_perfil_prefs';
 
@@ -301,7 +284,7 @@ function bindPreferenceToggles() {
             savePreferences();
         });
 
-        // Acessibilidade: Enter/Space
+        
         toggle.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
@@ -334,9 +317,7 @@ function savePreferences() {
     localStorage.setItem(PREF_STORAGE_KEY, JSON.stringify(prefs));
 }
 
-/* ============================================================
-   SAIR
-   ============================================================ */
+
 function bindSairEvents() {
     const btnSair   = document.getElementById('btn-sair');
     const modal     = document.getElementById('modal-sair');
@@ -359,16 +340,14 @@ function bindSairEvents() {
     });
 
     btnConfirm.addEventListener('click', () => {
-        // Limpa dados de sessão e redireciona para login (ou dashboard)
+        
         modal.style.display = 'none';
-        // Ajuste o caminho abaixo conforme a estrutura do seu projeto
+        
         window.location.href = 'dashboard.html';
     });
 }
 
-/* ============================================================
-   HELPERS
-   ============================================================ */
+
 function toggle(id, show) {
     const el = document.getElementById(id);
     if (el) el.style.display = show ? '' : 'none';
