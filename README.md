@@ -10,12 +10,13 @@ Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo de
 
 ## Integrantes
 
-* Rodrigo Elias Pimenta
-* Victor Manoel Alves Pereira
 * Jairo Miranda Leal
+* Mariana Alves Carneiro
 * Monaliza da Silva Vitor
 * Octávio Augusto de Oliveira Santana Guimarães
-* Mariana Alves Carneiro
+* Rodrigo Elias Pimenta
+* Victor Augusto Bastos dos Santos
+* Victor Manoel Alves Pereira
 
 ## Orientador
 
