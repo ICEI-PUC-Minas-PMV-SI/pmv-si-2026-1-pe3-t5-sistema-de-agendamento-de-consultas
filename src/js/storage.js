@@ -257,6 +257,7 @@ const OdontoStorage = {
         const db = this.getDB();
         return db.consultas
             .filter(c => c.idDentista === Number(idDentista) && c.data === data)
+            .filter(c => !['Desmarcado', 'Cancelado'].includes(c.status))
             .sort((a, b) => a.hora.localeCompare(b.hora));
     },
 
@@ -276,7 +277,7 @@ const OdontoStorage = {
         if (!agenda) return [];
 
         const bookedTimes = this.getAppointmentsByDentistAndDate(idDentista, data)
-            .filter(c => c.status !== 'Desmarcado')
+            .filter(c => !['Desmarcado', 'Cancelado'].includes(c.status))
             .map(c => c.hora);
 
         return agenda.horariosTodos.filter(h => !agenda.horariosBloqueados.includes(h) && !bookedTimes.includes(h));
@@ -297,6 +298,7 @@ const OdontoStorage = {
                 const d = new Date(c.data);
                 return d >= start && d <= end;
             })
+            .filter(c => !['Desmarcado', 'Cancelado'].includes(c.status))
             .sort((a, b) => {
                 if (a.data === b.data) return a.hora.localeCompare(b.hora);
                 return a.data.localeCompare(b.data);
@@ -379,9 +381,11 @@ const OdontoStorage = {
             todayConsultas = todayConsultas.filter(c => c.idDentista === activeDentistId);
         }
 
-        const agendadas = todayConsultas.filter(c => c.status === "Confirmado" || c.status === "Pendente").length;
+        const validConsultas = todayConsultas.filter(c => !['Desmarcado', 'Cancelado'].includes(c.status));
+        const agendadas = validConsultas.filter(c => ['Confirmado', 'Pendente', 'Realizado'].includes(c.status)).length;
 
-        const desmarcadas = todayConsultas.filter(c => c.status === "Desmarcado").length;
+        const desmarcadas = todayConsultas.filter(c => c.status === 'Desmarcado').length;
+        const canceladas = todayConsultas.filter(c => c.status === 'Cancelado').length;
 
         let targetAgendas = db.agendas.filter(a => a.data === TODAY);
         if (activeDentistId) {
@@ -398,8 +402,8 @@ const OdontoStorage = {
         });
 
         const occupiedHours = new Set(
-            todayConsultas
-                .filter(c => c.status === "Confirmado" || c.status === "Realizado")
+            validConsultas
+                .filter(c => ['Confirmado', 'Realizado'].includes(c.status))
                 .map(c => c.hora)
         );
 
@@ -410,17 +414,10 @@ const OdontoStorage = {
             }
         });
 
-        if (!selectedDentistId && agendadas === 20 && desmarcadas === 2) {
-            return {
-                agendadas: 20,
-                desmarcadas: 2,
-                livres: 3
-            };
-        }
-
         return {
             agendadas,
             desmarcadas,
+            canceladas,
             livres: freeCount
         };
     }
