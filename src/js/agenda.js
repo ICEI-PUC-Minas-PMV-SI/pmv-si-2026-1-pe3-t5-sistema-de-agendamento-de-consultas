@@ -137,17 +137,18 @@ function renderAgenda() {
     const slotsTable = document.getElementById('slots-table');
     if (slotsTable) slotsTable.style.display = 'table';
 
-    const appointments = OdontoStorage.getAppointmentsByDentistAndDate(dentistId, date);
+    const activeAppointments = OdontoStorage.getAppointmentsByDentistAndDate(dentistId, date);
+    const allAppointments = OdontoStorage.getAppointmentsByDentistAndDateAll(dentistId, date);
     const availableSlots = OdontoStorage.getAvailableSlots(dentistId, date);
     const agenda = OdontoStorage.getAgendaByDentistAndDate(dentistId, date);
     const blockedCount = agenda ? agenda.horariosBloqueados.length : 0;
 
-    document.getElementById('agenda-total').textContent = appointments.length;
+    document.getElementById('agenda-total').textContent = activeAppointments.length;
     document.getElementById('agenda-free').textContent = availableSlots.length;
     document.getElementById('agenda-blocked').textContent = blockedCount;
 
     populateSlotSelect(availableSlots);
-    renderSlotsTable(dentistId, date, appointments, availableSlots, agenda);
+    renderSlotsTable(dentistId, date, allAppointments, availableSlots, agenda);
 }
 
 function switchView(view) {
