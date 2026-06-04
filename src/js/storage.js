@@ -257,7 +257,7 @@ const OdontoStorage = {
         const db = this.getDB();
         return db.consultas
             .filter(c => c.idDentista === Number(idDentista) && c.data === data)
-            .filter(c => !['Desmarcado', 'Cancelado'].includes(c.status))
+            .filter(c => !['desmarcado', 'cancelado'].includes((c.status || '').toLowerCase()))
             .sort((a, b) => a.hora.localeCompare(b.hora));
     },
 
