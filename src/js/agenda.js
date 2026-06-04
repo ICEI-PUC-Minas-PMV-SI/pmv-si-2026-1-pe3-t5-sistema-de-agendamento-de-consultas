@@ -448,6 +448,24 @@ function openAppointmentModal(idConsulta) {
     document.getElementById('modal-close').onclick = closeAppointmentModal;
     document.getElementById('modal-cancel').onclick = () => { cancelAppointment(idConsulta); closeAppointmentModal(); };
     document.getElementById('modal-reschedule').onclick = () => { closeAppointmentModal(); openRescheduleModal(idConsulta); };
+
+    const existingConfirm = document.getElementById('modal-confirm');
+    if (existingConfirm) {
+        existingConfirm.remove();
+    }
+
+    if (appt.status.toLowerCase() !== 'confirmado') {
+        const btnConfirm = document.createElement('button');
+        btnConfirm.className = 'btn btn-primary';
+        btnConfirm.id = 'modal-confirm';
+        btnConfirm.textContent = 'Confirmar';
+        btnConfirm.addEventListener('click', () => {
+            confirmAppointment(idConsulta);
+            closeAppointmentModal();
+        });
+        const footer = modal.querySelector('div[style*="justify-content:flex-end"]');
+        if (footer) footer.insertBefore(btnConfirm, footer.firstChild);
+    }
 }
 
 function closeAppointmentModal() {
@@ -458,6 +476,12 @@ function closeAppointmentModal() {
 function cancelAppointment(idConsulta) {
     OdontoStorage.updateAppointment(idConsulta, { status: 'Desmarcado' });
     showFeedback('Consulta cancelada.', false);
+    renderAgenda();
+}
+
+function confirmAppointment(idConsulta) {
+    OdontoStorage.updateAppointment(idConsulta, { status: 'Confirmado' });
+    showFeedback('Consulta confirmada.', false);
     renderAgenda();
 }
 
@@ -536,7 +560,7 @@ function saveReschedule() {
         return;
     }
 
-    OdontoStorage.updateAppointment(apptId, { data: newDate, hora: newTime, status: 'Pendente' });
+    OdontoStorage.updateAppointment(apptId, { data: newDate, hora: newTime, status: 'Remarcado' });
     showFeedback('Consulta remarcada com sucesso.', false);
     closeRescheduleModal();
     renderAgenda();
