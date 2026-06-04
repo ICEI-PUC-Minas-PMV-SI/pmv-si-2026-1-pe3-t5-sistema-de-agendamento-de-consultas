@@ -350,7 +350,7 @@ function renderSlotsTable(dentistId, date, appointments, availableSlots, agenda)
 
             const btnCancel = document.createElement('button');
             btnCancel.className = 'btn';
-            btnCancel.textContent = 'Cancelar';
+            btnCancel.textContent = 'Desmarcar';
             btnCancel.addEventListener('click', () => cancelAppointment(consulta.idConsulta));
 
             tdActions.appendChild(btnView);
