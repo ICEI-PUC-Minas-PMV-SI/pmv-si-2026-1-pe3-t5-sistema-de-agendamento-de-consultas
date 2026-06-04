@@ -169,6 +169,14 @@ const OdontoStorage = {
         localStorage.setItem('odonto_db', JSON.stringify(db));
     },
 
+    normalizeStatus(status) {
+        return (status || '').toString().trim().toLowerCase();
+    },
+
+    isActiveAppointment(consulta) {
+        return !['desmarcado', 'cancelado'].includes(this.normalizeStatus(consulta.status));
+    },
+
     getUsers() {
         return this.getDB().usuarios;
     },
@@ -257,7 +265,7 @@ const OdontoStorage = {
         const db = this.getDB();
         return db.consultas
             .filter(c => c.idDentista === Number(idDentista) && c.data === data)
-            .filter(c => !['desmarcado', 'cancelado'].includes((c.status || '').toLowerCase()))
+            .filter(c => this.isActiveAppointment(c))
             .sort((a, b) => a.hora.localeCompare(b.hora));
     },
 
@@ -276,9 +284,7 @@ const OdontoStorage = {
         const agenda = this.getAgendaByDentistAndDate(idDentista, data);
         if (!agenda) return [];
 
-        const bookedTimes = this.getAppointmentsByDentistAndDate(idDentista, data)
-            .filter(c => !['Desmarcado', 'Cancelado'].includes(c.status))
-            .map(c => c.hora);
+        const bookedTimes = this.getAppointmentsByDentistAndDate(idDentista, data).map(c => c.hora);
 
         return agenda.horariosTodos.filter(h => !agenda.horariosBloqueados.includes(h) && !bookedTimes.includes(h));
     },
@@ -298,7 +304,7 @@ const OdontoStorage = {
                 const d = new Date(c.data);
                 return d >= start && d <= end;
             })
-            .filter(c => !['Desmarcado', 'Cancelado'].includes(c.status))
+            .filter(c => this.isActiveAppointment(c))
             .sort((a, b) => {
                 if (a.data === b.data) return a.hora.localeCompare(b.hora);
                 return a.data.localeCompare(b.data);
