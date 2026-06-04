@@ -331,7 +331,13 @@ function renderSlotsTable(dentistId, date, appointments, availableSlots, agenda)
         row.appendChild(tdProcedimento);
 
         const tdActions = document.createElement('td');
-        if (consulta) {
+        if (isBlocked) {
+            const btnUnblock = document.createElement('button');
+            btnUnblock.className = 'btn';
+            btnUnblock.textContent = 'Desbloquear';
+            btnUnblock.addEventListener('click', () => unblockScheduleSlot(dentistId, date, hora));
+            tdActions.appendChild(btnUnblock);
+        } else if (consulta) {
             const btnView = document.createElement('button');
             btnView.className = 'btn';
             btnView.textContent = 'Ver';
@@ -359,6 +365,12 @@ function renderSlotsTable(dentistId, date, appointments, availableSlots, agenda)
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
             tdActions.appendChild(btnBook);
+
+            const btnBlock = document.createElement('button');
+            btnBlock.className = 'btn';
+            btnBlock.textContent = 'Bloquear';
+            btnBlock.addEventListener('click', () => blockScheduleSlot(dentistId, date, hora));
+            tdActions.appendChild(btnBlock);
         }
         row.appendChild(tdActions);
 
@@ -482,6 +494,24 @@ function cancelAppointment(idConsulta) {
 function confirmAppointment(idConsulta) {
     OdontoStorage.updateAppointment(idConsulta, { status: 'Confirmado' });
     showFeedback('Consulta confirmada.', false);
+    renderAgenda();
+}
+
+function blockScheduleSlot(idDentista, date, hora) {
+    if (!OdontoStorage.blockScheduleSlot(idDentista, date, hora)) {
+        showFeedback('Falha ao bloquear horário.', true);
+        return;
+    }
+    showFeedback(`Horário ${hora} bloqueado.`, false);
+    renderAgenda();
+}
+
+function unblockScheduleSlot(idDentista, date, hora) {
+    if (!OdontoStorage.unblockScheduleSlot(idDentista, date, hora)) {
+        showFeedback('Falha ao desbloquear horário.', true);
+        return;
+    }
+    showFeedback(`Horário ${hora} desbloqueado.`, false);
     renderAgenda();
 }
 
