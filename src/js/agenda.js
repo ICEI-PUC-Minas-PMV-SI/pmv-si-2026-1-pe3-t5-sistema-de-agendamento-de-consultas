@@ -142,7 +142,9 @@ function renderAgenda() {
     const agenda = OdontoStorage.getAgendaByDentistAndDate(dentistId, date);
     const blockedCount = agenda ? agenda.horariosBloqueados.length : 0;
 
-    document.getElementById('agenda-total').textContent = appointments.length;
+    const validAppointments = appointments.filter(c => !['desmarcado', 'cancelado'].includes((c.status || '').toLowerCase()));
+
+    document.getElementById('agenda-total').textContent = validAppointments.length;
     document.getElementById('agenda-free').textContent = availableSlots.length;
     document.getElementById('agenda-blocked').textContent = blockedCount;
 
