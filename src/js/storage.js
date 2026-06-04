@@ -325,8 +325,15 @@ const OdontoStorage = {
 
     blockScheduleSlot(idDentista, data, hora) {
         const db = this.getDB();
-        const agenda = db.agendas.find(a => a.idDentista === Number(idDentista) && a.data === data);
-        if (!agenda) return false;
+        let agenda = db.agendas.find(a => a.idDentista === Number(idDentista) && a.data === data);
+        if (!agenda) {
+            agenda = buildDefaultAgenda(Number(idDentista), data);
+            agenda.idAgenda = db.agendas.length > 0 ? Math.max(...db.agendas.map(a => a.idAgenda)) + 1 : 1;
+            db.agendas.push(agenda);
+        }
+        if (!agenda.horariosTodos.includes(hora)) {
+            return false;
+        }
         if (!agenda.horariosBloqueados.includes(hora)) {
             agenda.horariosBloqueados.push(hora);
             this.saveDB(db);
