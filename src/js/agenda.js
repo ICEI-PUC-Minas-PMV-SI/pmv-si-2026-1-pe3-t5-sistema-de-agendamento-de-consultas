@@ -277,7 +277,7 @@ function renderSlotsTable(dentistId, date, appointments, availableSlots, agenda)
     const tbody = document.getElementById('slots-tbody');
     tbody.innerHTML = '';
 
-    const horarios = agenda ? agenda.horariosTodos : [];
+    const horarios = agenda ? Array.from(new Set([...(agenda.horariosTodos || []), ...(agenda.horariosBloqueados || [])])).sort((a, b) => a.localeCompare(b)) : [];
     const appointmentsByHour = appointments.reduce((acc, consulta) => {
         acc[consulta.hora] = consulta;
         return acc;
