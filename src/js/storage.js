@@ -269,6 +269,13 @@ const OdontoStorage = {
             .sort((a, b) => a.hora.localeCompare(b.hora));
     },
 
+    getAppointmentsByDentistAndDateAll(idDentista, data) {
+        const db = this.getDB();
+        return db.consultas
+            .filter(c => c.idDentista === Number(idDentista) && c.data === data)
+            .sort((a, b) => a.hora.localeCompare(b.hora));
+    },
+
     getAgendaByDentistAndDate(idDentista, data) {
         const db = this.getDB();
         return db.agendas.find(a => a.idDentista === Number(idDentista) && a.data === data) || buildDefaultAgenda(Number(idDentista), data);
