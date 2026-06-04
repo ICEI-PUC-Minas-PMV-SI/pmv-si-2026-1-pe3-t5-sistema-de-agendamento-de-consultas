@@ -330,6 +330,26 @@
     border-color: #7DD3FC;
 }
 
+.status-badge.confirmado,
+.status-badge.realizado {
+    background-color: #D1FAE5;
+    color: #065F46;
+    border-color: #6EE7B7;
+}
+
+.status-badge.pendente {
+    background-color: #FEF3C7;
+    color: #92400E;
+    border-color: #FDE68A;
+}
+
+.status-badge.desmarcado,
+.status-badge.cancelado {
+    background-color: #FEE2E2;
+    color: #B91C1C;
+    border-color: #FCA5A5;
+}
+
 @media (max-width: 1024px) {
     .agenda-filters-grid,
     .form-grid,
