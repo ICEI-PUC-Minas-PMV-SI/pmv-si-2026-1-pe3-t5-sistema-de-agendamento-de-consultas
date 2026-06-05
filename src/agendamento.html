@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar Consulta</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="sidebar">
+
+        <div class="sidebar-header">
+            <div class="logo-icon">
+                <img src="images/odondtoflow.png"
+                     alt="OdontoFlow Logo"
+                     class="sidebar-logo-img">
+            </div>
+            <div class="sidebar-brand">
+                ODONTOFLOW
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                Dashboard
+            </a>
+
+            <a href="#" class="nav-item active">
+                Agendamentos
+            </a>
+
+            <a href="#" class="nav-item">
+                Pacientes
+            </a>
+
+            <a href="#" class="nav-item">
+                Histórico
+            </a>
+
+            <a href="#" class="nav-item">
+                Perfil
+            </a>
+        </nav>
+
+    </div>
+
+    <main class="content">
+
+        <section class="agendamento-card">
+
+            <h1>Agendar Consulta</h1>
+
+            <div class="form-group">
+
+                <label>PACIENTE</label>
+
+                <div class="search-box">
+                    <input
+                        type="text"
+                        id="paciente"
+                        placeholder="Pesquisar..."
+                    >
+                    <span class="search-icon">🔍</span>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>DENTISTA</label>
+
+                <div class="search-box">
+                    <input
+                        type="text"
+                        id="dentista"
+                        placeholder="Pesquisar..."
+                    >
+                    <span class="search-icon">🔍</span>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="data-box">
+
+                    <label>DATA</label>
+
+                    <input
+                        type="date"
+                        id="dataConsulta"
+                    >
+
+                </div>
+
+                <div class="horario-box">
+
+                    <label>HORÁRIO</label>
+
+                    <div class="horarios">
+
+                        <button class="horario">09:00</button>
+                        <button class="horario">09:30</button>
+
+                        <button class="horario">10:00</button>
+                        <button class="horario">13:00</button>
+
+                        <button class="horario">13:30</button>
+                        <button class="horario">16:00</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>TIPO DE CONSULTA</label>
+
+                <select id="tipoConsulta">
+
+                    <option value="">
+                        Limpeza, avaliação, canal...
+                    </option>
+
+                    <option>Limpeza</option>
+                    <option>Avaliação</option>
+                    <option>Canal</option>
+                    <option>Extração</option>
+
+                </select>
+
+            </div>
+
+            <div class="footer-form">
+
+                <button
+                    class="btn-confirmar"
+                    id="btnConfirmar">
+
+                    Confirmar Agendamento
+
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
