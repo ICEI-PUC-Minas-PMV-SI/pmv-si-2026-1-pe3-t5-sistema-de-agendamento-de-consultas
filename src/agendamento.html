@@ -5,48 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agendar Consulta</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="container">
 
-    <div class="sidebar">
-
-        <div class="sidebar-header">
-            <div class="logo-icon">
-                <img src="images/odondtoflow.png"
-                     alt="OdontoFlow Logo"
-                     class="sidebar-logo-img">
-            </div>
-            <div class="sidebar-brand">
-                ODONTOFLOW
-            </div>
+  <div class="sidebar">
+    <div class="sidebar-header">
+        <div class="logo-icon">
+            <img src="images/odondtoflow.png" alt="OdontoFlow Logo" class="sidebar-logo-img">
         </div>
-
-        <nav class="sidebar-nav">
-            <a href="dashboard.html" class="nav-item">
-                Dashboard
-            </a>
-
-            <a href="#" class="nav-item active">
-                Agendamentos
-            </a>
-
-            <a href="#" class="nav-item">
-                Pacientes
-            </a>
-
-            <a href="#" class="nav-item">
-                Histórico
-            </a>
-
-            <a href="#" class="nav-item">
-                Perfil
-            </a>
-        </nav>
-
     </div>
+
+    <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-item" id="nav-dashboard">Início</a>
+        <a href="agendamentos.html" class="nav-item" id="nav-agendamentos">Agendamentos</a>
+        <a href="#" class="nav-item nav-placeholder" id="nav-pacientes">Pacientes</a>
+        <a href="#" class="nav-item nav-placeholder" id="nav-historico">Histórico</a>
+        <a href="perfil.html" class="nav-item" id="nav-perfil">Perfil</a>
+    </nav>
+</div>
 
     <main class="content">
 
