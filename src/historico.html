@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGACO - Histórico OdontoFlow</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="components/sidebar/sidebar.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/historico.css">
+</head>
+
+<body>
+    <div class="app-layout">
+        <div id="sidebar-container"></div>
+
+        <main class="dashboard-wrapper">
+            <div class="dashboard-card-container">
+                <header class="dashboard-header">
+                    <div>
+                        <h1 class="dashboard-title">Histórico de Atendimentos</h1>
+                        <p class="section-subtitle">Consulte atendimentos realizados, remarcados e desmarcados.</p>
+                    </div>
+
+                    <div class="header-controls">
+                        <div class="user-profile">
+                            <span class="user-badge" id="logged-user">Administrador: Pedro Campos</span>
+                        </div>
+                    </div>
+                </header>
+
+                <section class="history-filters-section">
+                    <div class="history-filters-grid">
+                        <div class="filter-field">
+                            <label for="filter-patient">Paciente</label>
+                            <select id="filter-patient"></select>
+                        </div>
+
+                        <div class="filter-field">
+                            <label for="filter-dentist">Dentista</label>
+                            <select id="filter-dentist"></select>
+                        </div>
+
+                        <div class="filter-field">
+                            <label for="filter-status">Status</label>
+                            <select id="filter-status">
+                                <option value="">Todos</option>
+                                <option value="Realizado">Realizado</option>
+                                <option value="Confirmado">Confirmado</option>
+                                <option value="Pendente">Pendente</option>
+                                <option value="Remarcado">Remarcado</option>
+                                <option value="Desmarcado">Desmarcado</option>
+                                <option value="Cancelado">Cancelado</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-field">
+                            <label for="filter-date">Data</label>
+                            <input type="date" id="filter-date">
+                        </div>
+                    </div>
+
+                    <div class="history-search-row">
+                        <input type="text" id="history-search" placeholder="Buscar por paciente, dentista ou procedimento">
+                        <button class="btn btn-primary" id="clear-filters" type="button">Limpar filtros</button>
+                    </div>
+                </section>
+
+                <section class="history-summary-section">
+                    <div class="card-grid">
+                        <div class="history-card">
+                            <div class="history-card-title">Total no histórico</div>
+                            <div class="history-card-value" id="history-total">0</div>
+                        </div>
+
+                        <div class="history-card">
+                            <div class="history-card-title">Realizados</div>
+                            <div class="history-card-value" id="history-done">0</div>
+                        </div>
+
+                        <div class="history-card">
+                            <div class="history-card-title">Desmarcados</div>
+                            <div class="history-card-value" id="history-canceled">0</div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="history-table-section">
+                    <h2 class="section-title">Registros de atendimento</h2>
+
+                    <div class="table-container">
+                        <table class="appointments-table" id="history-table">
+                            <thead>
+                                <tr>
+                                    <th>Data</th>
+                                    <th>Horário</th>
+                                    <th>Paciente</th>
+                                    <th>Dentista</th>
+                                    <th>Procedimento</th>
+                                    <th>Status</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody id="history-tbody"></tbody>
+                        </table>
+
+                        <div class="no-records-message" id="no-records" style="display: none;">
+                            Nenhum atendimento encontrado.
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <div id="history-modal" class="history-modal" style="display:none;">
+        <div class="history-modal-backdrop"></div>
+        <div class="history-modal-content">
+            <h3>Detalhes do Atendimento</h3>
+            <div id="history-modal-body"></div>
+
+            <div class="modal-actions">
+                <button id="mark-realized-button" class="btn btn-primary" type="button">Marcar como realizado</button>
+                <button id="history-modal-close" class="btn" type="button">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/storage.js"></script>
+    <script src="components/sidebar/sidebar.js"></script>
+    <script src="js/historico.js"></script>
+</body>
+
+</html>

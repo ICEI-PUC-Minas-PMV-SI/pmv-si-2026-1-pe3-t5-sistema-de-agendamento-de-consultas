@@ -1,0 +1,202 @@
+.section-subtitle {
+    color: #475569;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 8px;
+}
+
+.history-filters-section,
+.history-summary-section,
+.history-table-section {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.history-filters-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.filter-field {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.filter-field label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #475569;
+}
+
+.filter-field select,
+.filter-field input,
+.history-search-row input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #CBD5E1;
+    border-radius: 14px;
+    background-color: #FFFFFF;
+    color: #0F172A;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.history-search-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 16px;
+    align-items: center;
+}
+
+.btn {
+    border: none;
+    border-radius: 14px;
+    padding: 14px 24px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--blue-accent);
+    color: #FFFFFF;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(43, 92, 255, 0.18);
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.history-card {
+    background-color: #FFFFFF;
+    border: 2px solid #E2E8F0;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(16, 59, 227, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.history-card-title {
+    color: #475569;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.history-card-value {
+    font-size: 46px;
+    font-weight: 800;
+    color: var(--bg-dark-navy);
+}
+
+.status-badge.realizado {
+    background-color: #D1FAE5;
+    color: #065F46;
+    border-color: #6EE7B7;
+}
+
+.status-badge.confirmado {
+    background-color: #DBEAFE;
+    color: #1E40AF;
+    border-color: #93C5FD;
+}
+
+.status-badge.pendente {
+    background-color: #FEF3C7;
+    color: #92400E;
+    border-color: #FDE68A;
+}
+
+.status-badge.remarcado {
+    background-color: #E0F2FE;
+    color: #1E40AF;
+    border-color: #93C5FD;
+}
+
+.status-badge.desmarcado,
+.status-badge.cancelado {
+    background-color: #FEE2E2;
+    color: #B91C1C;
+    border-color: #FCA5A5;
+}
+
+.no-records-message {
+    padding: 40px;
+    text-align: center;
+    font-weight: 600;
+    color: #718096;
+    background-color: #FFFFFF;
+}
+
+.history-modal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.history-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.55);
+}
+
+.history-modal-content {
+    position: relative;
+    background: #FFFFFF;
+    border-radius: 24px;
+    padding: 32px;
+    width: 520px;
+    max-width: 92%;
+    box-shadow: 0 24px 60px rgba(15, 23, 42, 0.16);
+    z-index: 10;
+}
+
+.history-modal-content h3 {
+    margin: 0 0 20px;
+    font-size: 26px;
+    color: #0F172A;
+}
+
+.history-modal-content p {
+    margin: 8px 0;
+    font-size: 15px;
+    color: #334155;
+}
+
+.history-modal-content strong {
+    color: #0F172A;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+@media (max-width: 1024px) {
+    .history-filters-grid,
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .history-search-row {
+        grid-template-columns: 1fr;
+    }
+}
