@@ -38,7 +38,7 @@ function highlightActiveLink() {
     } else if (pageName.includes('paciente')) {
         const pacLink = document.getElementById('nav-pacientes');
         if (pacLink) pacLink.classList.add('active');
-    } else if (pageName.includes('historico')) {
+    } else if (pageName === 'historico.html' || pageName.includes('historico')) {
         const histLink = document.getElementById('nav-historico');
         if (histLink) histLink.classList.add('active');
     } else if (pageName.includes('perfil')) {
